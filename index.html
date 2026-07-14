@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Building 2026 | AMATA Factory</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --blue:#003b73;--blue2:#005596;--blue3:#0074b8;--green:#00a3e0;--mint:#e8fff3;--sky:#e8f4fd;--sky2:#f0f8ff;--ice:#f7fbff;
+  --white:#fff;--dark:#1a2332;--dark2:#2d3b4e;--gray:#64748b;--gray2:#94a3b8;--gray3:#cbd5e1;--gray4:#e2e8f0;--gray5:#f1f5f9;
+  --coral:#ef4444;--amber:#f59e0b;--red:#dc2626;--r:16px;--r2:24px;
+  --shadow:0 1px 3px rgba(0,85,150,.06),0 8px 24px rgba(0,85,150,.08);
+  --shadow2:0 4px 12px rgba(0,85,150,.1),0 20px 50px rgba(0,85,150,.12)
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden;line-height:1.65}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:2rem}
+.hero-bg,.splash{background:radial-gradient(circle at 20% 15%,rgba(0,163,224,.26),transparent 30%),linear-gradient(135deg,#061b3a 0%,#082b57 36%,#003b73 68%,#005596 100%)}
+.hero-bg{position:absolute;inset:0}
+.hero-wave{position:absolute;bottom:0;left:0;right:0;height:120px;overflow:hidden}.hero-wave svg{position:absolute;bottom:0;width:200%;animation:waveMove 8s linear infinite}
+@keyframes waveMove{to{transform:translateX(-50%)}}
+.hero-dots,.splash-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:32px 32px}
+.hero-c{position:relative;z-index:2;text-align:center;max-width:860px;color:#fff}
+.htag{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:100px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pd 2s infinite}@keyframes pd{50%{opacity:.4;transform:scale(.8)}}
+.hero h1{font-size:clamp(2.1rem,7vw,5rem);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:.8rem;text-shadow:0 4px 30px rgba(0,0,0,.15);white-space:nowrap}
+.hero-sub{font-size:1.1rem;font-weight:300;opacity:.88;margin-bottom:2.5rem;letter-spacing:.5px}
+.countdown{display:flex;gap:16px;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap}
+.cd-b{text-align:center;min-width:100px;padding:20px 24px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:20px}
+.cd-n{font-family:'DM Mono',monospace;font-size:3.6rem;font-weight:800;line-height:1;color:#00e676;text-shadow:0 0 20px rgba(0,230,118,.4),0 2px 8px rgba(0,0,0,.2)}
+.cd-l{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;opacity:.72;margin-top:8px}
+.hchips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.hc{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:14px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);font-size:.85rem;font-weight:500}
+.snav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--gray4);padding:0 1.5rem}
+.snav-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px}.snav-brand{font-weight:800;font-size:.85rem;color:var(--blue);letter-spacing:1px}.snav-links{display:flex;gap:2rem}.snav-links a{font-size:.8rem;font-weight:600;color:var(--gray);transition:.3s;position:relative}.snav-links a:hover{color:var(--blue)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}.sec{padding:5rem 0}.shead{margin-bottom:3rem}.sl{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--blue2);margin-bottom:.4rem;display:flex;align-items:center;gap:8px}.sh2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--dark);line-height:1.15;letter-spacing:-.02em}.sp2{font-size:.9rem;color:var(--gray);margin-top:.4rem;max-width:520px}
+.rsec,.ssec{background:var(--ice);position:relative;overflow:hidden}.rsec-particles{position:absolute;inset:0;pointer-events:none}.rsec .wrap{position:relative;z-index:1}
+.fc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:2rem}.fc{perspective:800px;height:180px;cursor:pointer;opacity:0;transform:translateY(60px) rotateX(20deg) scale(.9)}.fc.fc-in{opacity:1;transform:translateY(0) rotateX(0) scale(1);transition:opacity .7s cubic-bezier(.2,0,.2,1),transform .7s cubic-bezier(.2,0,.2,1)}.fc-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}.fc.flipped .fc-inner{transform:rotateY(180deg)}.fc-front,.fc-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.06)}.fc-front{background:linear-gradient(135deg,#fff5f5,#fee2e2);border:1px solid #fecaca}.fc-back{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #a7f3d0;transform:rotateY(180deg)}.fc-ico{font-size:1.8rem}.fc-title{font-size:.82rem;font-weight:700;color:var(--dark);line-height:1.3}.fc-desc{font-size:.68rem;color:var(--gray);line-height:1.4}.fc-back .fc-title{color:#065f46}.fc-back .fc-desc{color:#047857;font-weight:500}.fc-hint{font-size:.5rem;color:var(--gray2);position:absolute;bottom:6px;right:10px;font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase}
+.glitch{position:relative;display:inline-block}.glitch:before,.glitch:after{content:attr(data-text);position:absolute;inset:0;background:inherit}.glitch:before{left:2px;text-shadow:-2px 0 var(--coral);animation:glitch1 4s infinite linear alternate-reverse}.glitch:after{left:-2px;text-shadow:2px 0 var(--green);animation:glitch2 4s infinite linear alternate-reverse}@keyframes glitch1{0%,90%,100%{clip-path:inset(100% 0 0 0);opacity:0}94%{clip-path:inset(50% 0 10% 0);opacity:1}}@keyframes glitch2{0%,93%,100%{clip-path:inset(100% 0 0 0);opacity:0}97%{clip-path:inset(60% 0 20% 0);opacity:1}}
+.osec{background:var(--white);position:relative;overflow:hidden}.outfit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.outfit-card{position:relative;min-height:220px;border-radius:var(--r2);padding:20px;background:linear-gradient(135deg,#fff,#f7fbff);border:1px solid var(--gray4);box-shadow:var(--shadow);overflow:hidden;transition:transform .3s,box-shadow .3s}.outfit-card:hover{transform:translateY(-5px);box-shadow:var(--shadow2)}.outfit-card:before{content:'';position:absolute;inset:auto -30px -48px auto;width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,rgba(0,140,202,.12),rgba(18,161,80,.16))}.outfit-ico{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,var(--sky),var(--mint));margin-bottom:22px}.outfit-title{font-size:1rem;font-weight:800;color:var(--dark);line-height:1.25;margin-bottom:8px}.outfit-desc{font-size:.78rem;color:var(--gray);line-height:1.55}.outfit-tag{display:inline-flex;margin-top:14px;padding:5px 10px;border-radius:999px;background:rgba(0,85,150,.08);font-family:'DM Mono',monospace;font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.8px;text-transform:uppercase}
+.clay{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:stretch}.cc{padding:0;border-radius:var(--r2);background:var(--white);position:relative;overflow:hidden;margin-bottom:0;box-shadow:var(--shadow);height:100%;box-sizing:border-box;border:2px solid transparent}.cc:before{content:'';position:absolute;inset:-2px;border-radius:calc(var(--r2) + 2px);background:linear-gradient(90deg,var(--blue),var(--blue2),var(--green),var(--blue));background-size:300% 100%;animation:borderGlow 3s linear infinite;z-index:-1}@keyframes borderGlow{to{background-position:300% 50%}}.cc-bar{height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--green))}
+.ig{display:flex;flex-direction:column}.ig-c{display:flex;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid var(--gray4);opacity:0;transform:translateX(-30px);transition:.2s}.ig-c.ig-vis{opacity:1;transform:translateX(0);transition:all .5s cubic-bezier(.4,0,.2,1)}.ig-c:hover{background:var(--ice)}.ig-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;font-size:1.45rem}.ig-red{background:#fee2e2}.ig-blue{background:var(--sky)}.ig-green{background:#d1fae5}.ig-nb{position:absolute;top:-6px;right:-6px;font-family:'DM Mono',monospace;font-size:.55rem;font-weight:700;color:#fff;background:var(--blue);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}.ig-tt{font-size:1rem;font-weight:700;color:var(--dark);line-height:1.3}.ig-sub{font-size:.78rem;color:var(--gray);line-height:1.4;margin-top:2px}
+.qrc{padding:1rem;border-radius:var(--r2);background:linear-gradient(135deg,var(--sky),var(--mint));border:1px solid rgba(0,85,150,.08);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;box-shadow:var(--shadow);position:relative;overflow:visible}.qrc h3{font-size:1.05rem;font-weight:800}.qr-wrap{width:280px;height:280px;border-radius:16px;background:#fff;padding:12px;box-shadow:0 4px 20px rgba(0,85,150,.1);animation:qrPulse 2s ease-in-out infinite}.qr-wrap img{width:100%;height:100%;object-fit:contain}.qr-fallback{width:100%;height:100%;display:grid;place-items:center;border-radius:10px;background:repeating-linear-gradient(45deg,#111 0 8px,#fff 8px 16px);color:#fff;font-weight:800;text-shadow:0 2px 6px #000}@keyframes qrPulse{50%{box-shadow:0 0 30px rgba(0,133,202,.45),0 0 60px rgba(0,85,150,.2)}}.cta{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.3s;box-shadow:0 4px 20px rgba(0,85,150,.25);animation:ctaBounce 2s ease-in-out infinite}@keyframes ctaBounce{40%{transform:translateY(-6px)}60%{transform:translateY(-3px)}}.qr-note{font-size:.72rem;color:var(--gray)}
+.dps{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap}.dp{padding:10px 22px;border-radius:12px;background:var(--white);border:1px solid var(--gray4);color:var(--gray);font-size:.82rem;font-weight:600;cursor:pointer;transition:.3s;box-shadow:0 1px 3px rgba(0,0,0,.04)}.dp:hover{color:var(--blue);border-color:var(--blue2)}.dp.on{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(0,85,150,.2)}
+.dnl{display:none}.dnl.on{display:grid;grid-template-columns:1fr 1fr;gap:24px;animation:fi .4s ease;align-items:start}@keyframes fi{from{opacity:0;transform:translateY(12px)}}
+.sbox{border-radius:var(--r2);overflow:hidden;position:relative;background:var(--blue);height:100%;min-height:420px;box-shadow:var(--shadow2)}.slides{position:relative;width:100%;height:100%}.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#fff}.slide.active{opacity:1}.slide img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.s-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,40,80,.78) 0%,rgba(0,85,150,.32) 55%,rgba(0,140,202,.12) 100%);z-index:1}.s-ct{position:relative;z-index:2;margin-top:auto;padding:1.5rem}.s-ic{font-size:3rem;margin-bottom:.5rem}.s-nm{font-size:1.4rem;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.3)}.s-ds{font-size:.78rem;opacity:.86;margin-top:4px}.dots{position:absolute;bottom:14px;right:16px;display:flex;gap:5px;z-index:5}.dot2{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:.3s;cursor:pointer}.dot2.on{background:#fff;width:22px;border-radius:4px}
+.tl-head{display:flex;align-items:center;gap:1rem;padding:1.2rem;border-radius:var(--r);background:var(--white);border:1px solid var(--gray4);margin-bottom:14px;box-shadow:var(--shadow)}.tl-big{font-size:2.2rem;font-weight:800;color:var(--blue);line-height:1}.tl-rt{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:2px;color:var(--blue2);text-transform:uppercase;font-weight:500}.tl-dt{font-size:.78rem;color:var(--gray);margin-top:2px}.tl-item{display:flex;gap:12px;padding:7px 0;position:relative}.tl-item:before{content:'';position:absolute;left:9px;top:26px;bottom:-7px;width:1.5px;background:var(--gray4)}.tl-item:last-child:before{display:none}.tl-dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--gray3);background:var(--white);flex-shrink:0;margin-top:1px;position:relative;z-index:2}.tl-time{font-family:'DM Mono',monospace;font-size:.7rem;font-weight:700;color:var(--blue)}.tl-tx{font-size:.78rem;color:var(--gray);line-height:1.4}.tl-tx b,.tl-tx .em{color:var(--blue);font-weight:700}
+.emer{background:linear-gradient(90deg,var(--blue),var(--blue2));padding:14px 2rem;text-align:center;font-size:.85rem;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}.emer-t{font-family:'DM Mono',monospace;font-weight:700;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:8px}footer{padding:14px 2rem;text-align:center;background:var(--dark)}.ft-b{font-size:.9rem;font-weight:800;letter-spacing:4px;color:#fff;margin-bottom:4px}.ft-s{font-size:.65rem;color:var(--gray2)}
+.rv{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.4,0,.2,1)}.rv.vis{opacity:1;transform:translateY(0)}
+.music-btn{position:fixed;bottom:24px;left:24px;z-index:999;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 4px 20px rgba(0,85,150,.35);display:flex;align-items:center;justify-content:center;transition:.3s}.music-btn:hover{transform:scale(1.1)}.music-btn svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2}.music-btn.playing{animation:musicPulse 1.5s ease-in-out infinite}@keyframes musicPulse{50%{box-shadow:0 0 0 10px rgba(0,133,202,.15),0 4px 20px rgba(0,85,150,.35)}}.eq{display:none;align-items:flex-end;gap:2px;height:16px}.music-btn.playing .eq{display:flex}.music-btn.playing .ico-music{display:none}.eq span{width:3px;background:#fff;border-radius:2px;animation:eqBar 1s ease-in-out infinite}.eq span:nth-child(1){animation-delay:0s;height:8px}.eq span:nth-child(2){animation-delay:.15s;height:14px}.eq span:nth-child(3){animation-delay:.3s;height:6px}.eq span:nth-child(4){animation-delay:.45s;height:12px}@keyframes eqBar{50%{height:16px}}.music-tooltip{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-size:.7rem;font-weight:600;padding:6px 14px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:.3s}.music-btn:hover .music-tooltip{opacity:1}
+.splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;transition:opacity .6s,visibility .6s}.splash.hide{opacity:0;visibility:hidden;pointer-events:none}.splash-c{position:relative;z-index:2;text-align:center;color:#fff;padding:2rem}.splash-logo{font-weight:800;font-size:.8rem;letter-spacing:4px;text-transform:uppercase;opacity:.68;margin-bottom:2rem}.splash-title{font-size:clamp(2rem,7vw,5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:.6rem;text-shadow:0 4px 30px rgba(0,0,0,.15);white-space:nowrap}.splash-sub{font-size:1rem;font-weight:300;opacity:.78;margin-bottom:2.5rem}.splash-enter{display:inline-flex;align-items:center;gap:10px;padding:16px 42px;border-radius:16px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:.3s;animation:splashPulse 2s ease-in-out infinite}@keyframes splashPulse{50%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+@keyframes floatUp{to{transform:translateY(-120px) scale(.3);opacity:0}}@keyframes qrShake{94%{transform:rotate(-3deg)}96%{transform:rotate(3deg)}98%{transform:rotate(-2deg)}}.qrc.shake{animation:qrShake .5s ease}
+@media(max-width:900px){.fc-grid,.outfit-grid{grid-template-columns:repeat(2,1fr)}.clay{grid-template-columns:1fr}.qrc{order:-1}.dnl.on{grid-template-columns:1fr}.sbox{aspect-ratio:16/9;min-height:auto;height:auto}}
+@media(max-width:768px){.sec{padding:3.5rem 0}.hchips{flex-direction:column;align-items:center}.dps{gap:4px}.dp{padding:8px 14px;font-size:.75rem}.countdown{gap:8px}.cd-b{min-width:70px;padding:14px 10px}.cd-n{font-size:2.6rem}.snav-links{gap:.6rem}.snav-links a{font-size:.68rem}.hero h1{font-size:2.2rem}.hero-sub{font-size:.95rem}.tl-big{font-size:1.6rem}.emer{flex-direction:column;gap:8px;padding:14px 1rem;font-size:.78rem}}
+@media(max-width:480px){.hero{padding:1.5rem 1rem}.hero h1{font-size:1.45rem}.splash-title{font-size:1.65rem}.countdown{gap:6px}.cd-b{min-width:60px;padding:10px 8px}.cd-n{font-size:2rem}.htag{font-size:10px;padding:6px 14px;letter-spacing:2px}.wrap{padding:0 1rem}.fc-grid,.outfit-grid{grid-template-columns:1fr}.fc{height:160px}.outfit-card{min-height:180px}.snav-brand{font-size:.75rem}.shead .sh2{font-size:1.3rem}.ig-c{padding:12px 16px;gap:12px}.ig-ico{width:44px;height:44px}.ig-tt{font-size:.88rem}.ig-sub{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:0s!important}.rv,.fc{opacity:1;transform:none}.rsec-particles{display:none}}
+</style>
+</head>
+<body>
+<div class="splash" id="splash">
+  <div class="splash-dots"></div>
+  <div class="splash-c">
+    <div class="splash-logo" data-bind="companyLine"></div>
+    <div class="splash-title" data-bind="title"></div>
+    <p class="splash-sub" data-bind="subtitle"></p>
+    <button class="splash-enter" id="splashBtn">▶ Khám phá ngay</button>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-dots"></div>
+  <div class="hero-wave"><svg viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0,60 C400,120 800,0 1200,60 C1600,120 2000,0 2400,60 L2400,120 L0,120 Z" fill="rgba(255,255,255,.06)"/></svg></div>
+  <div class="hero-c">
+    <div class="htag"><span class="pulse-dot"></span><span data-bind="companyLine"></span></div>
+    <h1 data-bind="title"></h1>
+    <p class="hero-sub" data-bind="heroSub"></p>
+    <div class="countdown" id="cd">
+      <div class="cd-b"><div class="cd-n" id="cd-d">--</div><div class="cd-l">Ngày</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-h">--</div><div class="cd-l">Giờ</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-m">--</div><div class="cd-l">Phút</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-s">--</div><div class="cd-l">Giây</div></div>
+    </div>
+    <div class="hchips"><div class="hc">📅 <span data-bind="dateRange"></span></div><div class="hc">📍 <span data-bind="location"></span></div></div>
+  </div>
+</section>
+
+<nav class="snav"><div class="snav-in"><div class="snav-brand" data-bind="brand"></div><div class="snav-links"><a href="#risk">An toàn</a><a href="#outfit">Trang phục</a><a href="#sched">Lịch trình</a></div></div></nav>
+
+<section class="rsec sec" id="risk"><div class="rsec-particles" id="rp"></div><div class="wrap">
+  <div class="shead rv"><div class="sl"><span class="glitch" data-text="An toàn là số 1">An toàn là số 1</span></div><div class="sh2">Mối nguy cần kiểm soát</div><div class="sp2">Tap vào thẻ để xem biện pháp kiểm soát</div></div>
+  <div class="fc-grid rv" id="riskCards"></div>
+</div></section>
+
+<section class="osec sec" id="outfit"><div class="wrap">
+  <div class="shead rv"><div class="sl">Chuẩn bị cá nhân</div><div class="sh2">Trang phục trong chuyến đi</div><div class="sp2">Ưu tiên gọn nhẹ, thoải mái và phù hợp các hoạt động ngoài trời.</div></div>
+  <div class="outfit-grid rv" id="outfitCards"></div>
+</div></section>
+
+<section class="ssec sec" id="sched"><div class="wrap">
+  <div class="shead rv"><div class="sl">Lịch trình</div><div class="sh2" data-bind="scheduleTitle"></div><div class="sp2" data-bind="scheduleSub"></div></div>
+  <div class="dps rv" id="dayButtons"></div>
+  <div id="dayPanels"></div>
+</div></section>
+
+<div class="emer">☎ Liên hệ khẩn cấp: <span class="emer-t" data-bind="emergency"></span></div>
+<footer><div class="ft-b" data-bind="brand"></div><div class="ft-s" data-bind="footer"></div></footer>
+
+<audio id="bgMusic" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+<button class="music-btn" id="musicBtn" aria-label="Bật/tắt nhạc nền">
+  <svg class="ico-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  <div class="eq"><span></span><span></span><span></span><span></span></div>
+  <div class="music-tooltip">🎵 Bật nhạc nền</div>
+</button>
+
+<script>
+/* ===============================
+   CHỈNH NỘI DUNG TẠI ĐÂY
+   - Đổi ngày, địa điểm, liên hệ, lịch trình...
+================================ */
+const siteContent = {
+  brand: "AMATA",
+  companyLine: "AMATA · Nhà máy Amata",
+  title: "🔥 Rực Cháy Tinh Thần",
+  subtitle: "Team Building 2026 · An toàn là số 1",
+  heroSub: "Ignite the Spirit · Connect as One · Team Building 2026",
+  dateRange: "21, 22/08/2026",
+  location: "Vũng Tàu",
+  countdownAt: "2026-08-21T04:45:00+07:00",
+  emergency: "HSES / BTC 0900 000 000",
+  footer: "Nhà máy Amata · Team Building 2026 · HSES Department",
+  scheduleTitle: "2 ngày · 1 đêm",
+  scheduleSub: "Amata / Văn Thánh → Vũng Tàu → Núi Dinh → Gala → Về",
+  risks: [
+    ["🚗","Giao thông & Cồn","Tai nạn đường dài, đặc biệt lái xe sau khi uống bia.","Tuyệt đối không lái xe khi đã uống. Sử dụng xe công ty, taxi/Grab. Phải thắt dây an toàn."],
+    ["🌊","Đuối nước","Tắm biển, hồ bơi, di chuyển bằng tàu/cano.","Chỉ tắm khu vực cho phép, mặc áo phao khi đi tàu, không tắm sau khi uống bia."],
+    ["🤕","Trượt ngã","Sàn ướt, bậc thềm, bờ đá, khu vực sân khấu.","Quan sát bề mặt sàn, di chuyển từ tốn, dùng dép chống trượt khi cần."],
+    ["🍽️","Thực phẩm","Ngộ độc, dị ứng thức ăn hoặc đau bụng.","Rửa tay trước khi ăn, báo BTC nếu có dị ứng, ưu tiên ăn chín uống sôi."],
+    ["🔥","Bỏng nhiệt","Bếp nướng, lẩu, nước nóng hoặc thiết bị phục vụ tiệc.","Cẩn trọng khi sử dụng bếp, không tự ý thao tác thiết bị nếu chưa được hướng dẫn."],
+    ["💥","Cháy nổ","Chập điện âm thanh/ánh sáng hoặc hút thuốc sai quy định.","Quan sát lối thoát hiểm khi đến nơi, chỉ hút thuốc tại khu vực quy định."],
+    ["☀️","Nắng nóng","Sốc nhiệt khi hoạt động ngoài trời hoặc team building giữa trưa.","Mang nón, kem chống nắng, uống đủ nước, nghỉ mát ngay khi mệt."],
+    ["🎢","Trò chơi vận động","Chấn thương khi tham gia trò chơi hoặc hoạt động cảm giác mạnh.","Tuân thủ hướng dẫn, không tham gia nếu có vấn đề tim mạch, huyết áp hoặc sức khỏe không phù hợp."]
+  ],
+  outfits: [
+    ["👕","Trang phục thoải mái","Khuyến khích áo thun, quần co giãn hoặc trang phục dễ vận động để thuận tiện khi di chuyển và tham gia team building.","Gọn nhẹ"],
+    ["👟","Mang giày thể thao","Ưu tiên giày thể thao hoặc giày bám tốt để tiện trekking, chạy trạm và các hoạt động ngoài trời.","Bắt buộc nên có"],
+    ["🧴","Kem chống nắng","Chuẩn bị kem chống nắng cá nhân, thoa trước khi hoạt động ngoài trời và bổ sung khi cần.","Bảo vệ da"],
+    ["🧢","Nón / mũ che nắng","Mang nón lưỡi trai, mũ rộng vành hoặc khăn đa năng để hạn chế nắng nóng khi tham quan và vui chơi.","Chống nắng"]
+  ],
+  days: [
+    {
+      route:"Amata / Văn Thánh → Vũng Tàu", date:"Thứ Sáu, 21/08/2026",
+      slides:[
+        ["🚌","Amata / Văn Thánh → Vũng Tàu","Khởi hành sáng sớm","https://images.unsplash.com/photo-1533002832-1721d16b4bb9?w=1200&auto=format&fit=crop&q=80"],
+        ["⛰️","Núi Dinh","Team Building · Trekking chạy trạm","https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&auto=format&fit=crop&q=80"],
+        ["🎉","Gala Dinner","Kết nối · bùng nổ · trao giải","https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&auto=format&fit=crop&q=80"]
+      ],
+      items:[["05:30 - 07:00","Xe tập trung đón tại <b>Khu Văn Thánh</b> và di chuyển dùng bữa sáng tại Mekong Reststop Long Thành Đồng Nai"],["06:00 - 07:00","Xe tập trung đón tại <b>Akzo Nobel - Khu Công Nghiệp Amata</b> và di chuyển dùng bữa sáng tại Mekong Reststop Long Thành Đồng Nai"],["07:00 - 08:30","Đoàn dùng sáng tại nhà hàng<br><span class='em'>Lưu ý:</span> lối lên cao tốc đang sửa chữa, giao thông có thể di chuyển chậm ít nhất 01 tiếng tùy mật độ giao thông"],["08:30 - 09:30","Sau bữa sáng đoàn di chuyển đến điểm tham quan <b>Núi Dinh</b>"],["09:30 - 11:30","Đoàn tham gia chương trình <span class='em'>Team Building - Trekking Chạy Trạm</span>"],["11:30 - 12:30","Xe đưa đoàn di chuyển dùng bữa trưa tại <b>Nhà hàng Vạn Chài</b>"],["12:30 - 13:30","Đoàn dùng bữa trưa tại nhà hàng địa phương"],["13:30 - 15:00","Xe di chuyển về khách sạn, tập trung nhận phòng và nghỉ ngơi"],["15:00 - 17:30","Đoàn nghỉ ngơi tại khách sạn và tự do sử dụng các dịch vụ"],["17:30 - 22:00","Tham gia chương trình <span class='em'>Gala Dinner</span> và dùng tiệc"],["22:00","Kết thúc chương trình. Nghỉ đêm tại Vũng Tàu"]]
+    },
+    {
+      route:"Vũng Tàu → Amata", date:"Thứ Bảy, 22/08/2026",
+      slides:[
+        ["🌅","Vũng Tàu","Ăn sáng · tự do biển","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80"],
+        ["🧳","Check-out","Trả phòng · khởi hành","https://images.unsplash.com/photo-1594919412633-e2c994455c39?w=1200&auto=format&fit=crop&q=80"],
+        ["🏭","Về Amata","Kết thúc chương trình","https://images.unsplash.com/photo-1533002832-1721d16b4bb9?w=1200&auto=format&fit=crop&q=80"]
+      ],
+      items:[["06:30 - 09:00","Đoàn dùng bữa sáng tại khách sạn"],["09:00 - 11:00","Tự do vui chơi khám phá tại Vũng Tàu"],["11:00 - 11:30","Đoàn trả phòng khách sạn"],["11:30 - 12:00","Xe đưa đoàn di chuyển tới <b>nhà hàng hải sản Lâm Đường</b>"],["12:00 - 13:30","Đoàn dùng bữa trưa tại nhà hàng địa phương"],["13:30 - 16:00","Xe di chuyển về lại địa điểm đón ban đầu. Dọc đường dừng chân tại <b>Bò Sữa Long Thành</b>"],["17:00","Trả khách tại <b>Khu Công Nghiệp Amata</b>"],["18:00","Trả khách tại <b>Khu Văn Thánh</b>"],["18:00","HDV chia tay đoàn và hẹn gặp lại đoàn"]]
+    }
+  ]
+};
+
+function renderContent(){
+  document.querySelectorAll("[data-bind]").forEach(el=>{el.innerHTML=siteContent[el.dataset.bind]||""});
+  document.title = "Team Building 2026 | " + siteContent.brand;
+  document.getElementById("riskCards").innerHTML = siteContent.risks.map(r=>`
+    <div class="fc" onclick="this.classList.toggle('flipped')"><div class="fc-inner">
+      <div class="fc-front"><div class="fc-ico">${r[0]}</div><div class="fc-title">${r[1]}</div><div class="fc-desc">${r[2]}</div><div class="fc-hint">tap ↻</div></div>
+      <div class="fc-back"><div class="fc-ico">✅</div><div class="fc-title">Biện pháp</div><div class="fc-desc">${r[3]}</div></div>
+    </div></div>`).join("");
+  document.getElementById("outfitCards").innerHTML = siteContent.outfits.map(o=>`
+    <div class="outfit-card"><div class="outfit-ico">${o[0]}</div><div class="outfit-title">${o[1]}</div><div class="outfit-desc">${o[2]}</div><div class="outfit-tag">${o[3]}</div></div>`).join("");
+  document.getElementById("dayButtons").innerHTML = siteContent.days.map((_,i)=>`<button class="dp ${i===0?'on':''}" onclick="sd(${i+1})">Ngày ${i+1}</button>`).join("");
+  document.getElementById("dayPanels").innerHTML = siteContent.days.map((d,i)=>`
+    <div class="dnl ${i===0?'on':''}" id="d${i+1}">
+      <div class="sbox"><div class="slides">${d.slides.map((s,j)=>`<div class="slide ${j===0?'active':''}"><img src="${s[3]}" alt="${s[1]}"><div class="s-ov"></div><div class="s-ct"><div class="s-ic">${s[0]}</div><div class="s-nm">${s[1]}</div><div class="s-ds">${s[2]}</div></div></div>`).join("")}</div><div class="dots"></div></div>
+      <div class="tl-col"><div class="tl-head"><div class="tl-big">${String(i+1).padStart(2,'0')}</div><div><div class="tl-rt">${d.route}</div><div class="tl-dt">${d.date}</div></div></div>
+        ${d.items.map(it=>`<div class="tl-item"><div class="tl-dot"></div><div class="tl-c"><div class="tl-time">${it[0]}</div><div class="tl-tx">${it[1]}</div></div></div>`).join("")}
+      </div>
+    </div>`).join("");
+}
+
+function updateCountdown(){
+  const left = new Date(siteContent.countdownAt) - new Date();
+  if(left<=0){document.getElementById("cd").innerHTML='<div style="font-weight:700">Đã khởi hành!</div>';return}
+  const d=Math.floor(left/864e5),h=Math.floor(left%864e5/36e5),m=Math.floor(left%36e5/6e4),s=Math.floor(left%6e4/1e3);
+  [["cd-d",d],["cd-h",h],["cd-m",m],["cd-s",s]].forEach(([id,val])=>document.getElementById(id).textContent=String(val).padStart(2,"0"));
+}
+function sd(n){document.querySelectorAll(".dnl").forEach(p=>p.classList.remove("on"));document.querySelectorAll(".dp").forEach(p=>p.classList.remove("on"));document.getElementById("d"+n).classList.add("on");document.querySelectorAll(".dp")[n-1].classList.add("on")}
+function initSlides(){document.querySelectorAll(".sbox").forEach(box=>{const slides=box.querySelectorAll(".slide"),dotsC=box.querySelector(".dots");dotsC.innerHTML="";slides.forEach((_,i)=>{const d=document.createElement("div");d.className="dot2"+(i===0?" on":"");d.onclick=()=>goSlide(box,i);dotsC.appendChild(d)});setInterval(()=>{const cur=[...slides].findIndex(s=>s.classList.contains("active"));goSlide(box,(cur+1)%slides.length)},3500)})}
+function goSlide(box,idx){box.querySelectorAll(".slide").forEach((s,i)=>s.classList.toggle("active",i===idx));box.querySelectorAll(".dot2").forEach((d,i)=>d.classList.toggle("on",i===idx))}
+function initMotion(){
+  const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("vis");ob.unobserve(e.target)}})},{threshold:.08,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=Math.min((i%8)*60,350)+"ms";ob.observe(el)});
+  const igOb=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll(".ig-c").forEach((it,i)=>setTimeout(()=>it.classList.add("ig-vis"),i*150));igOb.unobserve(e.target)}})},{threshold:.2});document.querySelectorAll(".ig").forEach(el=>igOb.observe(el));
+  const fcOb=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll(".fc").forEach((c,i)=>setTimeout(()=>c.classList.add("fc-in"),i*100));fcOb.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll(".fc-grid").forEach(el=>fcOb.observe(el));
+}
+function initEffects(){
+  setTimeout(()=>{const fc=document.querySelector(".fc");if(fc&&!fc.classList.contains("flipped")){fc.classList.add("flipped");setTimeout(()=>fc.classList.remove("flipped"),1800)}},2500);
+  const rp=document.getElementById("rp"),colors=["rgba(0,85,150,.12)","rgba(239,68,68,.1)","rgba(16,185,129,.1)","rgba(245,158,11,.1)"];setInterval(()=>{if(!rp)return;const d=document.createElement("div"),sz=Math.random()*10+4;d.style.cssText=`position:absolute;width:${sz}px;height:${sz}px;border-radius:50%;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;bottom:0;animation:floatUp ${Math.random()*4+3}s ease-out forwards`;rp.appendChild(d);setTimeout(()=>d.remove(),7000)},400);
+  setInterval(()=>{const qrc=document.querySelector(".qrc");if(qrc){qrc.classList.add("shake");setTimeout(()=>qrc.classList.remove("shake"),600)}},5000);
+}
+function initSplashMusic(){
+  const audio=document.getElementById("bgMusic"),btn=document.getElementById("musicBtn"),splash=document.getElementById("splash"),splashBtn=document.getElementById("splashBtn"),tip=btn.querySelector(".music-tooltip");audio.volume=.35;
+  let ctx=null,master=null,synthTimer=null,step=0;
+  const setPlaying=on=>{btn.classList.toggle("playing",on);tip.textContent=on?"🔇 Tắt nhạc nền":"🎵 Bật nhạc nền"};
+  const playTone=(freq,start,dur,type,vol)=>{
+    const osc=ctx.createOscillator(),gain=ctx.createGain();
+    osc.type=type;osc.frequency.setValueAtTime(freq,start);
+    gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(vol,start+.025);gain.gain.exponentialRampToValueAtTime(.001,start+dur);
+    osc.connect(gain);gain.connect(master);osc.start(start);osc.stop(start+dur+.04);
+  };
+  const startSynth=()=>{
+    const AudioContext=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContext)return;
+    if(!ctx){ctx=new AudioContext();master=ctx.createGain();master.gain.value=.24;master.connect(ctx.destination)}
+    ctx.resume();
+    if(synthTimer)return;
+    const notes=[261.63,329.63,392,523.25,392,329.63,293.66,349.23,440,587.33,440,349.23];
+    synthTimer=setInterval(()=>{
+      const now=ctx.currentTime,root=notes[step%notes.length];
+      playTone(root,now,.18,"triangle",.055);
+      if(step%2===0)playTone(root*1.5,now+.055,.13,"sine",.032);
+      if(step%4===0)playTone(root/2,now,.24,"sine",.04);
+      step++;
+    },210);
+    setPlaying(true);
+  };
+  const stopSynth=(update=true)=>{if(synthTimer){clearInterval(synthTimer);synthTimer=null}if(update)setPlaying(false)};
+  const startMusic=()=>{stopSynth(false);audio.currentTime=audio.currentTime||0;audio.play().then(()=>setPlaying(true)).catch(()=>startSynth())};
+  const stopMusic=()=>{audio.pause();stopSynth(false);setPlaying(false)};
+  const enter=()=>{startMusic();splash.classList.add("hide");setTimeout(()=>splash.style.display="none",700)};
+  splash.addEventListener("click",enter);splashBtn.addEventListener("click",e=>{e.stopPropagation();enter()});
+  btn.addEventListener("click",()=>{(audio.paused&&!synthTimer)?startMusic():stopMusic()});
+}
+renderContent();updateCountdown();setInterval(updateCountdown,1000);initSlides();initMotion();initEffects();initSplashMusic();
+</script>
+</body>
+</html>
