@@ -122,7 +122,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 <div class="emer">☎ Liên hệ khẩn cấp: <span class="emer-t" data-bind="emergency"></span></div>
 <footer><div class="ft-b" data-bind="brand"></div><div class="ft-s" data-bind="footer"></div></footer>
 
-<audio id="bgMusic" loop preload="auto"></audio>
+<audio id="bgMusic" src="team-building-vocal.mp3" loop preload="auto"></audio>
 <button class="music-btn" id="musicBtn" aria-label="Bật/tắt nhạc nền">
   <svg class="ico-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
   <div class="eq"><span></span><span></span><span></span><span></span></div>
@@ -144,7 +144,7 @@ const siteContent = {
   location: "Vũng Tàu",
   countdownAt: "2026-08-21T04:45:00+07:00",
   emergency: "HSES / BTC 0900 000 000",
-  footer: "Team Building 2026 · Ảnh Núi Dinh: <a href='https://commons.wikimedia.org/wiki/File:N%C3%BAi_Dinh-Nh%C3%ACn_t%E1%BB%AB_tr%C6%B0%E1%BB%9Dng_THPT_B%C3%A0_R%E1%BB%8Ba_-_panoramio.jpg' target='_blank' rel='noopener'>VCTBR</a> / <a href='https://creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>CC BY 3.0</a>, đã cắt ảnh · Ảnh hồ bơi Malibu: BTC cung cấp",
+  footer: "Team Building 2026 · Ảnh Núi Dinh: <a href='https://commons.wikimedia.org/wiki/File:N%C3%BAi_Dinh-Nh%C3%ACn_t%E1%BB%AB_tr%C6%B0%E1%BB%9Dng_THPT_B%C3%A0_R%E1%BB%8Ba_-_panoramio.jpg' target='_blank' rel='noopener'>VCTBR</a> / <a href='https://creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>CC BY 3.0</a>, đã cắt ảnh · Ảnh hồ bơi Malibu: BTC cung cấp · Nhạc: <a href='https://freemusicarchive.org/music/soundwave-sphere/single/love-and-liberation-anthemmp3/' target='_blank' rel='noopener'>Love and Liberation Anthem</a> - Soundwave Sphere / <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank' rel='noopener'>CC BY 4.0</a>",
   scheduleTitle: "2 ngày · 1 đêm",
   scheduleSub: "Nhà máy Amata → Núi Dinh → Malibu → Gala → Nhà máy Amata",
   risks: [
@@ -226,57 +226,13 @@ function initEffects(){
   setInterval(()=>{const qrc=document.querySelector(".qrc");if(qrc){qrc.classList.add("shake");setTimeout(()=>qrc.classList.remove("shake"),600)}},5000);
 }
 function initSplashMusic(){
-  const audio=document.getElementById("bgMusic"),btn=document.getElementById("musicBtn"),splash=document.getElementById("splash"),splashBtn=document.getElementById("splashBtn"),tip=btn.querySelector(".music-tooltip");audio.volume=.35;
-  let ctx=null,master=null,synthTimer=null,vocalTimer=null,step=0,vocalStep=0;
+  const audio=document.getElementById("bgMusic"),btn=document.getElementById("musicBtn"),splash=document.getElementById("splash"),splashBtn=document.getElementById("splashBtn"),tip=btn.querySelector(".music-tooltip");audio.volume=.42;
   const setPlaying=on=>{btn.classList.toggle("playing",on);tip.textContent=on?"🔇 Tắt nhạc nền":"🎵 Bật nhạc nền"};
-  const playTone=(freq,start,dur,type,vol)=>{
-    const osc=ctx.createOscillator(),gain=ctx.createGain();
-    osc.type=type;osc.frequency.setValueAtTime(freq,start);
-    gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(vol,start+.025);gain.gain.exponentialRampToValueAtTime(.001,start+dur);
-    osc.connect(gain);gain.connect(master);osc.start(start);osc.stop(start+dur+.04);
-  };
-  const playNoise=(start,dur,vol)=>{
-    const buffer=ctx.createBuffer(1,ctx.sampleRate*dur,ctx.sampleRate),data=buffer.getChannelData(0);
-    for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*(1-i/data.length);
-    const src=ctx.createBufferSource(),gain=ctx.createGain(),filter=ctx.createBiquadFilter();
-    filter.type="highpass";filter.frequency.value=1600;gain.gain.value=vol;
-    src.buffer=buffer;src.connect(filter);filter.connect(gain);gain.connect(master);src.start(start);src.stop(start+dur);
-  };
-  const speakChant=()=>{
-    if(!("speechSynthesis" in window))return;
-    const lines=["Rực cháy tinh thần!","AMATA tiến lên!","Kết nối bứt phá!","Team building sẵn sàng!"];
-    window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(lines[vocalStep%lines.length]);
-    u.lang="vi-VN";u.rate=1.05;u.pitch=1.18;u.volume=.62;
-    const voice=window.speechSynthesis.getVoices().find(v=>/vi|Vietnam/i.test(v.lang+" "+v.name));
-    if(voice)u.voice=voice;
-    window.speechSynthesis.speak(u);vocalStep++;
-  };
-  const startSynth=()=>{
-    const AudioContext=window.AudioContext||window.webkitAudioContext;
-    if(!AudioContext)return;
-    if(!ctx){ctx=new AudioContext();master=ctx.createGain();master.gain.value=.28;master.connect(ctx.destination)}
-    ctx.resume();
-    if(synthTimer)return;
-    const notes=[261.63,329.63,392,523.25,392,493.88,440,392,329.63,392,587.33,523.25,440,392,329.63,293.66];
-    synthTimer=setInterval(()=>{
-      const now=ctx.currentTime,root=notes[step%notes.length];
-      playTone(root,now,.14,"sawtooth",.045);
-      if(step%2===0)playTone(root*1.5,now+.045,.11,"square",.026);
-      if(step%4===0)playTone(root/2,now,.22,"sine",.055);
-      if(step%4===1||step%4===3)playNoise(now,.055,.035);
-      step++;
-    },165);
-    speakChant();
-    vocalTimer=setInterval(speakChant,5200);
-    setPlaying(true);
-  };
-  const stopSynth=(update=true)=>{if(synthTimer){clearInterval(synthTimer);synthTimer=null}if(vocalTimer){clearInterval(vocalTimer);vocalTimer=null}if("speechSynthesis" in window)window.speechSynthesis.cancel();if(update)setPlaying(false)};
-  const startMusic=()=>{stopSynth(false);startSynth()};
-  const stopMusic=()=>{audio.pause();stopSynth(false);setPlaying(false)};
+  const startMusic=()=>{audio.play().then(()=>setPlaying(true)).catch(()=>setPlaying(false))};
+  const stopMusic=()=>{audio.pause();setPlaying(false)};
   const enter=()=>{startMusic();splash.classList.add("hide");setTimeout(()=>splash.style.display="none",700)};
   splash.addEventListener("click",enter);splashBtn.addEventListener("click",e=>{e.stopPropagation();enter()});
-  btn.addEventListener("click",()=>{(audio.paused&&!synthTimer)?startMusic():stopMusic()});
+  btn.addEventListener("click",()=>{audio.paused?startMusic():stopMusic()});
 }
 renderContent();updateCountdown();setInterval(updateCountdown,1000);initSlides();initMotion();initEffects();initSplashMusic();
 </script>
