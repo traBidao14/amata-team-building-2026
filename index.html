@@ -35,6 +35,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .hchips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.hc{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:14px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);font-size:.85rem;font-weight:500}
 .snav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--gray4);padding:0 1.5rem}
 .snav-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px}.snav-brand{font-weight:800;font-size:.85rem;color:var(--blue);letter-spacing:1px}.snav-links{display:flex;gap:2rem}.snav-links a{font-size:.8rem;font-weight:600;color:var(--gray);transition:.3s;position:relative}.snav-links a:hover{color:var(--blue)}
+.snav-actions{display:flex;align-items:center;gap:18px}.lang-picker{position:relative;z-index:10001}.lang-picker.splash-lang{position:fixed;top:18px;right:18px}.lang-btn{height:36px;min-width:58px;padding:0 10px;border:1px solid var(--gray4);border-radius:8px;background:#fff;color:var(--blue);font-size:.7rem;font-weight:800;cursor:pointer;box-shadow:0 6px 18px rgba(0,59,115,.12)}.splash-lang .lang-btn{border-color:rgba(255,255,255,.28);background:rgba(6,27,58,.58);color:#fff;backdrop-filter:blur(12px)}.lang-menu{position:absolute;top:calc(100% + 7px);right:0;display:none;width:154px;padding:5px;border:1px solid var(--gray4);border-radius:9px;background:#fff;box-shadow:0 14px 36px rgba(0,34,68,.18)}.lang-picker.open .lang-menu{display:grid}.lang-option{padding:9px 10px;border:0;border-radius:6px;background:transparent;color:var(--dark);font-size:.72rem;font-weight:700;text-align:left;cursor:pointer}.lang-option:hover,.lang-option.active{background:var(--sky);color:var(--blue)}
 .wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}.sec{padding:5rem 0}.shead{margin-bottom:3rem}.sl{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--blue2);margin-bottom:.4rem;display:flex;align-items:center;gap:8px}.sh2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--dark);line-height:1.15;letter-spacing:-.02em}.sp2{font-size:.9rem;color:var(--gray);margin-top:.4rem;max-width:520px}
 .rsec,.ssec{background:var(--ice);position:relative;overflow:hidden}.rsec-particles{position:absolute;inset:0;pointer-events:none}.rsec .wrap{position:relative;z-index:1}
 .fc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:2rem}.fc{perspective:800px;height:180px;cursor:pointer;opacity:0;transform:translateY(60px) rotateX(20deg) scale(.9)}.fc.wide{grid-column:span 2}.fc.long{height:220px}.fc.fc-in{opacity:1;transform:translateY(0) rotateX(0) scale(1);transition:opacity .7s cubic-bezier(.2,0,.2,1),transform .7s cubic-bezier(.2,0,.2,1)}.fc-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}.fc.flipped .fc-inner{transform:rotateY(180deg)}.fc-front,.fc-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.06)}.fc-front{background:linear-gradient(135deg,#fff5f5,#fee2e2);border:1px solid #fecaca}.fc-back{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #a7f3d0;transform:rotateY(180deg)}.fc-ico{font-size:1.8rem}.fc-title{font-size:.82rem;font-weight:700;color:var(--dark);line-height:1.3}.fc-desc{font-size:.68rem;color:var(--gray);line-height:1.4}.fc-back .fc-title{color:#065f46}.fc-back .fc-desc{color:#047857;font-weight:500}.fc-list{margin:0;padding-left:1rem;text-align:left;color:#047857;font-size:.68rem;line-height:1.35;font-weight:500}.fc-list li{margin-bottom:3px}.fc-hint{font-size:.5rem;color:var(--gray2);position:absolute;bottom:6px;right:10px;font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase}
@@ -53,13 +54,14 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;transition:opacity .6s,visibility .6s;overflow:hidden}.splash.hide{opacity:0;visibility:hidden;pointer-events:none}.intro-glow{position:absolute;inset:-20%;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.32),transparent 22%),radial-gradient(circle at 18% 18%,rgba(0,198,255,.24),transparent 26%),radial-gradient(circle at 82% 80%,rgba(255,149,0,.2),transparent 24%);animation:introDrift 12s ease-in-out infinite alternate}.intro-rings{position:absolute;width:min(78vw,760px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.22);animation:ringSpin 20s linear infinite}.intro-rings:before,.intro-rings:after{content:'';position:absolute;inset:10%;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}.intro-rings:after{inset:24%;border-style:solid;border-color:rgba(255,178,42,.28)}.intro-wave{position:absolute;left:-10%;right:-10%;bottom:-8%;height:38%;background:linear-gradient(180deg,transparent,rgba(0,116,184,.34)),radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.35),transparent 46%);clip-path:polygon(0 45%,12% 36%,24% 48%,36% 32%,50% 45%,64% 28%,78% 43%,90% 31%,100% 42%,100% 100%,0 100%);animation:waveLift 5s ease-in-out infinite alternate}.intro-sparks{position:absolute;inset:0;pointer-events:none}.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffb22a;box-shadow:0 0 20px rgba(255,178,42,.75);animation:sparkFloat 3.8s ease-in-out infinite}.spark:nth-child(1){left:13%;top:22%;animation-delay:.1s}.spark:nth-child(2){left:24%;top:68%;animation-delay:.8s}.spark:nth-child(3){left:76%;top:24%;animation-delay:1.3s}.spark:nth-child(4){left:84%;top:62%;animation-delay:.4s}.spark:nth-child(5){left:49%;top:16%;animation-delay:1.9s}.splash-c{position:relative;z-index:2;text-align:center;color:#fff;padding:2rem;width:min(920px,92vw)}.splash-logo{font-weight:800;font-size:.8rem;letter-spacing:4px;text-transform:uppercase;opacity:.72;margin-bottom:1.2rem;animation:introRise .75s ease both}.intro-badge-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:1.2rem;animation:introRise .75s .12s ease both}.intro-badge{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px);font-family:'DM Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:1.2px}.splash-title{font-size:clamp(2.15rem,7vw,5.4rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:.7rem;text-shadow:0 4px 30px rgba(0,0,0,.18);white-space:nowrap;animation:introScale .85s .22s cubic-bezier(.2,0,.2,1) both}.title-fire{display:inline-block;filter:drop-shadow(0 10px 24px rgba(255,132,0,.42));animation:fireBeat 1.4s ease-in-out infinite}.splash-sub{font-size:1rem;font-weight:400;opacity:.84;margin-bottom:1.4rem;animation:introRise .75s .38s ease both}.intro-agenda{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:680px;margin:0 auto 2rem;animation:introRise .75s .52s ease both}.intro-step{position:relative;min-height:86px;border-radius:18px;padding:14px;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.07));border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}.intro-ico{font-size:1.55rem;line-height:1}.intro-t{font-size:.76rem;font-weight:800;margin-top:7px}.intro-s{font-size:.64rem;opacity:.78;margin-top:2px}.splash-enter{display:inline-flex;align-items:center;gap:10px;padding:16px 42px;border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(230,246,255,.9));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.55);color:#063064;font-size:1rem;font-weight:800;cursor:pointer;transition:.3s;animation:splashPulse 2s ease-in-out infinite}.splash-enter:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.22)}.splash-enter:active{transform:translateY(0) scale(.98)}@keyframes splashPulse{50%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}@keyframes introDrift{to{transform:translate3d(3%,2%,0) scale(1.05)}}@keyframes ringSpin{to{transform:rotate(360deg)}}@keyframes waveLift{to{transform:translate3d(-3%,3%,0)}}@keyframes sparkFloat{50%{transform:translate3d(0,-18px,0) scale(1.45);opacity:.55}}@keyframes introRise{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:translate3d(0,0,0)}}@keyframes introScale{from{opacity:0;transform:translate3d(0,24px,0) scale(.92)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}@keyframes fireBeat{50%{transform:translateY(-3px) scale(1.08)}}
 @keyframes floatUp{to{transform:translateY(-120px) scale(.3);opacity:0}}@keyframes qrShake{94%{transform:rotate(-3deg)}96%{transform:rotate(3deg)}98%{transform:rotate(-2deg)}}.qrc.shake{animation:qrShake .5s ease}
 @media(max-width:900px){.fc-grid,.outfit-grid{grid-template-columns:repeat(2,1fr)}.clay{grid-template-columns:1fr}.qrc{order:-1}.dnl.on{grid-template-columns:1fr}.sbox{aspect-ratio:16/9;min-height:auto;height:auto}.emer-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:768px){.sec{padding:3.5rem 0}.hchips{flex-direction:column;align-items:center}.dps{gap:4px}.dp{padding:8px 14px;font-size:.75rem}.countdown{gap:8px}.cd-b{min-width:70px;padding:14px 10px}.cd-n{font-size:2.6rem}.snav-links{gap:.6rem}.snav-links a{font-size:.68rem}.hero h1{font-size:2.2rem}.hero-sub{font-size:.95rem}.intro-agenda{grid-template-columns:1fr;max-width:360px}.intro-step{min-height:auto;padding:12px}.tl-big{font-size:1.6rem}.emer{padding:18px 1rem}.emer-list{grid-template-columns:1fr}.emer-person{text-align:center}}
-@media(max-width:480px){.hero{padding:1.5rem 1rem}.hero h1{font-size:1.45rem}.splash-c{padding:1.2rem;width:100%}.splash-logo{font-size:.68rem;letter-spacing:2.6px}.splash-title{font-size:1.65rem}.intro-badge{font-size:.58rem;padding:7px 11px}.intro-agenda{margin-bottom:1.4rem}.splash-enter{width:100%;justify-content:center;padding:14px 22px}.countdown{gap:6px}.cd-b{min-width:60px;padding:10px 8px}.cd-n{font-size:2rem}.htag{font-size:10px;padding:6px 14px;letter-spacing:2px}.wrap{padding:0 1rem}.fc-grid,.outfit-grid{grid-template-columns:1fr}.fc,.fc.wide{grid-column:auto;height:180px}.fc.long{height:220px}.outfit-card{min-height:180px}.snav{padding:0 .75rem}.snav-brand{display:none}.snav-in{justify-content:center}.snav-links{width:100%;justify-content:space-between;gap:.35rem}.snav-links a{font-size:.62rem;white-space:nowrap}.shead .sh2{font-size:1.3rem}.ig-c{padding:12px 16px;gap:12px}.ig-ico{width:44px;height:44px}.ig-tt{font-size:.88rem}.ig-sub{font-size:.72rem}}
+@media(max-width:768px){.sec{padding:3.5rem 0}.hchips{flex-direction:column;align-items:center}.dps{gap:4px}.dp{padding:8px 14px;font-size:.75rem}.countdown{gap:8px}.cd-b{min-width:70px;padding:14px 10px}.cd-n{font-size:2.6rem}.snav-actions{gap:8px}.snav-links{gap:.6rem}.snav-links a{font-size:.68rem}.hero h1{font-size:2.2rem}.hero-sub{font-size:.95rem}.intro-agenda{grid-template-columns:1fr;max-width:360px}.intro-step{min-height:auto;padding:12px}.tl-big{font-size:1.6rem}.emer{padding:18px 1rem}.emer-list{grid-template-columns:1fr}.emer-person{text-align:center}}
+@media(max-width:480px){.hero{padding:1.5rem 1rem}.hero h1{font-size:1.45rem}.splash-c{padding:1.2rem;width:100%}.splash-logo{font-size:.68rem;letter-spacing:2.6px}.splash-title{font-size:1.65rem}.intro-badge{font-size:.58rem;padding:7px 11px}.intro-agenda{margin-bottom:1.4rem}.splash-enter{width:100%;justify-content:center;padding:14px 22px}.countdown{gap:6px}.cd-b{min-width:60px;padding:10px 8px}.cd-n{font-size:2rem}.htag{font-size:10px;padding:6px 14px;letter-spacing:2px}.wrap{padding:0 1rem}.fc-grid,.outfit-grid{grid-template-columns:1fr}.fc,.fc.wide{grid-column:auto;height:180px}.fc.long{height:220px}.outfit-card{min-height:180px}.snav{padding:0 .55rem}.snav-brand{display:none}.snav-in{justify-content:center}.snav-actions{width:100%;gap:5px}.snav-links{flex:1;justify-content:space-between;gap:.2rem}.snav-links a{font-size:.55rem;white-space:nowrap}.snav .lang-btn{min-width:38px;padding:0 5px;font-size:0}.snav .lang-btn .lang-code{font-size:.58rem}.shead .sh2{font-size:1.3rem}.ig-c{padding:12px 16px;gap:12px}.ig-ico{width:44px;height:44px}.ig-tt{font-size:.88rem}.ig-sub{font-size:.72rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:0s!important}.rv,.fc{opacity:1;transform:none}.rsec-particles{display:none}}
 </style>
 </head>
 <body>
 <div class="splash" id="splash">
+  <div class="lang-picker splash-lang"><button class="lang-btn" type="button" aria-label="Chọn ngôn ngữ">🌐 <span class="lang-code">VI</span></button><div class="lang-menu"><button class="lang-option" type="button" data-lang-choice="vi">VI · Tiếng Việt</button><button class="lang-option" type="button" data-lang-choice="en">EN · English</button></div></div>
   <div class="splash-dots"></div>
   <div class="intro-glow"></div>
   <div class="intro-rings"></div>
@@ -73,12 +75,12 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
       <div class="intro-badge" data-bind="dateRange"></div>
       <div class="intro-badge" data-bind="location"></div>
     </div>
-    <div class="splash-title"><span class="title-fire">🔥</span> Rực Cháy Tinh Thần</div>
+    <div class="splash-title"><span class="title-fire">🔥</span> <span id="splashTitleText">Rực Cháy Tinh Thần</span></div>
     <p class="splash-sub" data-bind="subtitle"></p>
-    <div class="intro-agenda" aria-label="Tóm tắt hành trình">
-      <div class="intro-step"><div class="intro-ico">🥾</div><div class="intro-t">Trekking</div><div class="intro-s">Núi Dinh</div></div>
-      <div class="intro-step"><div class="intro-ico">🎉</div><div class="intro-t">Gala Dinner</div><div class="intro-s">Kết nối đội nhóm</div></div>
-      <div class="intro-step"><div class="intro-ico">🌊</div><div class="intro-t">Vũng Tàu</div><div class="intro-s">2 ngày 1 đêm</div></div>
+    <div class="intro-agenda" id="introAgenda" aria-label="Tóm tắt hành trình">
+      <div class="intro-step"><div class="intro-ico">🥾</div><div class="intro-t" id="introTrekTitle">Trekking</div><div class="intro-s" id="introTrekSub">Núi Dinh</div></div>
+      <div class="intro-step"><div class="intro-ico">🎉</div><div class="intro-t" id="introGalaTitle">Gala Dinner</div><div class="intro-s" id="introGalaSub">Kết nối đội nhóm</div></div>
+      <div class="intro-step"><div class="intro-ico">🌊</div><div class="intro-t" id="introPlaceTitle">Vũng Tàu</div><div class="intro-s" id="introPlaceSub">2 ngày 1 đêm</div></div>
     </div>
     <button class="splash-enter" id="splashBtn">▶ Bắt đầu hành trình</button>
   </div>
@@ -92,29 +94,29 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
     <h1 data-bind="title"></h1>
     <p class="hero-sub" data-bind="heroSub"></p>
     <div class="countdown" id="cd">
-      <div class="cd-b"><div class="cd-n" id="cd-d">--</div><div class="cd-l">Ngày</div></div>
-      <div class="cd-b"><div class="cd-n" id="cd-h">--</div><div class="cd-l">Giờ</div></div>
-      <div class="cd-b"><div class="cd-n" id="cd-m">--</div><div class="cd-l">Phút</div></div>
-      <div class="cd-b"><div class="cd-n" id="cd-s">--</div><div class="cd-l">Giây</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-d">--</div><div class="cd-l" id="cdDays">Ngày</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-h">--</div><div class="cd-l" id="cdHours">Giờ</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-m">--</div><div class="cd-l" id="cdMinutes">Phút</div></div>
+      <div class="cd-b"><div class="cd-n" id="cd-s">--</div><div class="cd-l" id="cdSeconds">Giây</div></div>
     </div>
     <div class="hchips"><div class="hc">📅 <span data-bind="dateRange"></span></div><div class="hc">📍 <span data-bind="location"></span></div></div>
   </div>
 </section>
 
-<nav class="snav"><div class="snav-in"><div class="snav-brand" data-bind="brand"></div><div class="snav-links"><a href="#risk">An toàn</a><a href="#outfit">Trang phục</a><a href="#sched">Lịch trình</a><a href="phong-xe.html">Phòng &amp; Xe</a></div></div></nav>
+<nav class="snav"><div class="snav-in"><div class="snav-brand" data-bind="brand"></div><div class="snav-actions"><div class="snav-links"><a id="navSafety" href="#risk">An toàn</a><a id="navOutfit" href="#outfit">Trang phục</a><a id="navSchedule" href="#sched">Lịch trình</a><a id="navLookup" href="phong-xe.html">Phòng &amp; Xe</a></div><div class="lang-picker"><button class="lang-btn" type="button" aria-label="Chọn ngôn ngữ">🌐 <span class="lang-code">VI</span></button><div class="lang-menu"><button class="lang-option" type="button" data-lang-choice="vi">VI · Tiếng Việt</button><button class="lang-option" type="button" data-lang-choice="en">EN · English</button></div></div></div></div></nav>
 
 <section class="rsec sec" id="risk"><div class="rsec-particles" id="rp"></div><div class="wrap">
-  <div class="shead rv"><div class="sl"><span class="glitch" data-text="An toàn là số 1">An toàn là số 1</span></div><div class="sh2">Mối nguy cần kiểm soát</div><div class="sp2">Nhấn vào thẻ để xem biện pháp kiểm soát.</div></div>
+  <div class="shead rv"><div class="sl"><span class="glitch" id="safetyKicker" data-text="An toàn là số 1">An toàn là số 1</span></div><div class="sh2" id="safetyTitle">Mối nguy cần kiểm soát</div><div class="sp2" id="safetySubtitle">Nhấn vào thẻ để xem biện pháp kiểm soát.</div></div>
   <div class="fc-grid rv" id="riskCards"></div>
 </div></section>
 
 <section class="osec sec" id="outfit"><div class="wrap">
-  <div class="shead rv"><div class="sl">Chuẩn bị cá nhân</div><div class="sh2">Trang phục trong chuyến đi</div><div class="sp2">Ưu tiên gọn nhẹ, thoải mái và phù hợp các hoạt động ngoài trời.</div></div>
+  <div class="shead rv"><div class="sl" id="outfitKicker">Chuẩn bị cá nhân</div><div class="sh2" id="outfitTitle">Trang phục trong chuyến đi</div><div class="sp2" id="outfitSubtitle">Ưu tiên gọn nhẹ, thoải mái và phù hợp các hoạt động ngoài trời.</div></div>
   <div class="outfit-grid rv" id="outfitCards"></div>
 </div></section>
 
 <section class="ssec sec" id="sched"><div class="wrap">
-  <div class="shead rv"><div class="sl">Lịch trình</div><div class="sh2" data-bind="scheduleTitle"></div><div class="sp2" data-bind="scheduleSub"></div></div>
+  <div class="shead rv"><div class="sl" id="scheduleKicker">Lịch trình</div><div class="sh2" data-bind="scheduleTitle"></div><div class="sp2" data-bind="scheduleSub"></div></div>
   <div class="dps rv" id="dayButtons"></div>
   <div id="dayPanels"></div>
 </div></section>
@@ -137,7 +139,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
    CHỈNH NỘI DUNG TẠI ĐÂY
    - Đổi ngày, địa điểm, liên hệ, lịch trình...
 ================================ */
-const siteContent = {
+const siteContentVi = {
   brand: "NHÀ MÁY AMATA",
   companyLine: "NHÀ MÁY AMATA",
   title: "🔥 Rực Cháy Tinh Thần",
@@ -194,19 +196,91 @@ const siteContent = {
   ]
 };
 
+const siteContentEn = {
+  ...siteContentVi,
+  brand: "AMATA PLANT",
+  companyLine: "AMATA PLANT",
+  title: "🔥 IGNITE THE SPIRIT",
+  subtitle: "Team Building 2026 · Safety First",
+  location: "Vung Tau",
+  emergencyContacts: [
+    ["Nguyễn Ngọc Lê Minh", "Organizing Committee Leader", "0326 867 141"],
+    ["Đỗ Quốc Thắng", "Coach 1 Leader", "0937 507 370"],
+    ["Đoàn Quang Vinh", "Coach 2 Leader", "0966 921 638"],
+    ["Nguyễn Xuân Giáp", "Coach 3 Leader", "0903 005 883"],
+    ["Nguyễn Quốc Bảo", "Coach 4 Leader", "0903 333 007"]
+  ],
+  scheduleTitle: "2 days · 1 night",
+  scheduleSub: "Amata Plant → Nui Dinh → Malibu → Gala → Amata Plant",
+  risks: [
+    ["🚗","Road Safety","Traffic accidents, collisions or loss of control while travelling.",["Comply with LSR7 and always wear your seat belt.","Follow traffic laws.","Do not consume alcohol while on the coach or when operating a vehicle.","Do not play around on the coach.","Follow the assigned coach list and notify the coach leader of any changes."],"wide long"],
+    ["🌊","Activities near or in the sea","Risks when swimming or joining activities near the sea or pool.",["Follow beach, hotel and tour guide regulations.","Stay within the designated swimming area and do not swim late at night.","Do not swim after consuming alcohol."]],
+    ["🤕","Slips and falls","Wet floors, steps, rocks, stairs or outdoor walking areas.",["Watch the surface while moving.","Sports shoes are recommended."]],
+    ["🍽️","Food poisoning","Food allergies, stomach discomfort or food unsuitable for your health.",["Inform the Organizing Committee of any food allergies.","Eat thoroughly cooked food and drink safe water."]],
+    ["🧳","Loss of property","Loss of personal belongings, documents or valuables.",["Avoid bringing valuable items.","Leave valuables in your room or deposit them at hotel reception when needed."]],
+    ["💥","Fire and explosion","Electrical faults, unsafe use of electrical equipment or smoking outside designated areas.",["Follow hotel electrical safety rules.","Report anything unusual to the Organizing Committee.","Smoke only in designated areas."]],
+    ["☀️","Heat exhaustion","Fatigue, heatstroke or dehydration during outdoor activities.",["Wear a hat and apply sunscreen.","Drink enough water and rest in a cool place when tired."]],
+    ["🥾","Trekking Team Activity","Injury, slipping or fatigue during the Team Building trekking challenge.",["Inform the Organizing Committee of any health concerns.","Follow all instructions from the Organizing Committee.","Use three points of contact on stairs: both feet grounded and one hand holding the handrail."],"wide long"]
+  ],
+  outfits: [
+    ["👕","Wear the Plant Team Building shirt on Day 1","Wear the Plant Team Building shirt on the first day. Bring an extra T-shirt and comfortable, flexible clothing if needed.","Day 1"],
+    ["👟","Wear sports shoes","Choose sports shoes or shoes with good grip for trekking, station challenges and outdoor activities.","Recommended"],
+    ["🧴","Sunscreen","Bring personal sunscreen, apply it before outdoor activities and reapply when needed.","Skin protection"],
+    ["🧢","Sun hat","The Organizing Committee will provide hats before departure. Please wear one during activities to protect yourself from the heat.","Provided by OC"]
+  ],
+  days: [
+    {
+      route:"Amata Plant → Vung Tau", date:"Friday, 21/08/2026",
+      slides:[
+        ["🚌","Amata Plant → Vung Tau","Depart for the team journey","nui-dinh-real.jpg"],
+        ["⛰️","Nui Dinh","Team Building · Trekking challenge","nui-dinh-real.jpg"],
+        ["🏨","Malibu","Check in and rest","malibu-pool.jpg","soft-fit"],
+        ["🎉","Gala Dinner","Connect · celebrate · awards","https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&auto=format&fit=crop&q=80"]
+      ],
+      items:[["06:00","Coaches depart from <b>Amata Plant</b>"],["07:15","Breakfast at <b>Mekong Restop Long Thanh</b>"],["09:15","Join the <span class='em'>Team Building Trekking Challenge</span> at <b>Nui Dinh</b>"],["12:45","Lunch at <b>Lam Duong Restaurant</b>"],["14:15","Travel to <b>Malibu Hotel</b>, check in and rest"],["18:00","<span class='em'>Gala Dinner</span>"]]
+    },
+    {
+      route:"Vung Tau → Amata Plant", date:"Saturday, 22/08/2026",
+      slides:[
+        ["🧳","Check-out","Check out · depart","https://images.unsplash.com/photo-1594919412633-e2c994455c39?w=1200&auto=format&fit=crop&q=80"],
+        ["🏭","Return to Amata Plant","End of the program","https://images.unsplash.com/photo-1533002832-1721d16b4bb9?w=1200&auto=format&fit=crop&q=80"]
+      ],
+      items:[["06:30","Breakfast at the hotel, followed by free time to explore <b>Vung Tau</b>"],["11:00","Check out and travel to <b>Van Chai Restaurant</b> for lunch"],["13:00","Depart for <b>Amata Plant</b>"]]
+    }
+  ]
+};
+
+const staticText={
+  vi:{splashTitle:"Rực Cháy Tinh Thần",introTrekTitle:"Trekking",introTrekSub:"Núi Dinh",introGalaTitle:"Gala Dinner",introGalaSub:"Kết nối đội nhóm",introPlaceTitle:"Vũng Tàu",introPlaceSub:"2 ngày 1 đêm",enter:"▶ Bắt đầu hành trình",days:"Ngày",hours:"Giờ",minutes:"Phút",seconds:"Giây",navSafety:"An toàn",navOutfit:"Trang phục",navSchedule:"Lịch trình",navLookup:"Phòng & Xe",safetyKicker:"An toàn là số 1",safetyTitle:"Mối nguy cần kiểm soát",safetySubtitle:"Nhấn vào thẻ để xem biện pháp kiểm soát.",outfitKicker:"Chuẩn bị cá nhân",outfitTitle:"Trang phục trong chuyến đi",outfitSubtitle:"Ưu tiên gọn nhẹ, thoải mái và phù hợp các hoạt động ngoài trời.",scheduleKicker:"Lịch trình",emergency:"☎ Liên hệ khẩn cấp",control:"Biện pháp",tap:"nhấn ↻",day:"Ngày",departed:"Đã khởi hành!",musicOn:"🎵 Bật nhạc nền",musicOff:"🔇 Tắt nhạc nền",languageLabel:"Chọn ngôn ngữ"},
+  en:{splashTitle:"IGNITE THE SPIRIT",introTrekTitle:"Trekking",introTrekSub:"Nui Dinh",introGalaTitle:"Gala Dinner",introGalaSub:"Team connection",introPlaceTitle:"Vung Tau",introPlaceSub:"2 days · 1 night",enter:"▶ Start the journey",days:"Days",hours:"Hours",minutes:"Minutes",seconds:"Seconds",navSafety:"Safety",navOutfit:"Outfit",navSchedule:"Itinerary",navLookup:"Room & Coach",safetyKicker:"Safety First",safetyTitle:"Key hazards and controls",safetySubtitle:"Tap a card to view the control measures.",outfitKicker:"Personal preparation",outfitTitle:"What to wear and bring",outfitSubtitle:"Keep it light, comfortable and suitable for outdoor activities.",scheduleKicker:"Itinerary",emergency:"☎ Emergency contacts",control:"Control measures",tap:"tap ↻",day:"Day",departed:"The trip has started!",musicOn:"🎵 Turn on music",musicOff:"🔇 Turn off music",languageLabel:"Choose language"}
+};
+
+let currentLanguage=new URLSearchParams(location.search).get("lang")||localStorage.getItem("amata-language")||"vi";
+if(!["vi","en"].includes(currentLanguage))currentLanguage="vi";
+let siteContent=currentLanguage==="en"?siteContentEn:siteContentVi;
+
 function renderContent(){
+  const t=staticText[currentLanguage];
+  document.documentElement.lang=currentLanguage;
   document.querySelectorAll("[data-bind]").forEach(el=>{el.innerHTML=siteContent[el.dataset.bind]||""});
   document.title = "Team Building 2026 | " + siteContent.brand;
+  [["splashTitleText",t.splashTitle],["introTrekTitle",t.introTrekTitle],["introTrekSub",t.introTrekSub],["introGalaTitle",t.introGalaTitle],["introGalaSub",t.introGalaSub],["introPlaceTitle",t.introPlaceTitle],["introPlaceSub",t.introPlaceSub],["splashBtn",t.enter],["cdDays",t.days],["cdHours",t.hours],["cdMinutes",t.minutes],["cdSeconds",t.seconds],["navSafety",t.navSafety],["navOutfit",t.navOutfit],["navSchedule",t.navSchedule],["navLookup",t.navLookup],["safetyTitle",t.safetyTitle],["safetySubtitle",t.safetySubtitle],["outfitKicker",t.outfitKicker],["outfitTitle",t.outfitTitle],["outfitSubtitle",t.outfitSubtitle],["scheduleKicker",t.scheduleKicker],["emergencyTitle",t.emergency]].forEach(([id,value])=>document.getElementById(id).textContent=value);
+  const safetyKicker=document.getElementById("safetyKicker");safetyKicker.textContent=t.safetyKicker;safetyKicker.dataset.text=t.safetyKicker;
+  document.getElementById("introAgenda").setAttribute("aria-label",currentLanguage==="en"?"Trip overview":"Tóm tắt hành trình");
+  document.querySelectorAll(".lang-code").forEach(el=>el.textContent=currentLanguage.toUpperCase());
+  document.querySelectorAll(".lang-btn").forEach(el=>el.setAttribute("aria-label",t.languageLabel));document.getElementById("musicBtn").setAttribute("aria-label",currentLanguage==="en"?"Turn background music on or off":"Bật hoặc tắt nhạc nền");
+  document.querySelectorAll(".lang-option").forEach(el=>el.classList.toggle("active",el.dataset.langChoice===currentLanguage));
+  const lookupUrl=new URL("phong-xe.html",location.href);lookupUrl.searchParams.set("lang",currentLanguage);document.getElementById("navLookup").href=lookupUrl.href;
   document.getElementById("emergencyContacts").innerHTML = siteContent.emergencyContacts.map(c=>`
     <div class="emer-person"><div class="emer-name">${c[0]} (${c[1]})</div><a class="emer-phone" href="tel:${c[2].replace(/\s/g,'')}">☎ ${c[2]}</a></div>`).join("");
   document.getElementById("riskCards").innerHTML = siteContent.risks.map(r=>`
     <div class="fc ${r[4]||''}" onclick="this.classList.toggle('flipped')"><div class="fc-inner">
-      <div class="fc-front"><div class="fc-ico">${r[0]}</div><div class="fc-title">${r[1]}</div><div class="fc-desc">${r[2]}</div><div class="fc-hint">tap ↻</div></div>
-      <div class="fc-back"><div class="fc-ico">✅</div><div class="fc-title">Biện pháp</div><ul class="fc-list">${r[3].map(x=>`<li>${x}</li>`).join("")}</ul></div>
+      <div class="fc-front"><div class="fc-ico">${r[0]}</div><div class="fc-title">${r[1]}</div><div class="fc-desc">${r[2]}</div><div class="fc-hint">${t.tap}</div></div>
+      <div class="fc-back"><div class="fc-ico">✅</div><div class="fc-title">${t.control}</div><ul class="fc-list">${r[3].map(x=>`<li>${x}</li>`).join("")}</ul></div>
     </div></div>`).join("");
   document.getElementById("outfitCards").innerHTML = siteContent.outfits.map(o=>`
     <div class="outfit-card"><div class="outfit-ico">${o[0]}</div><div class="outfit-title">${o[1]}</div><div class="outfit-desc">${o[2]}</div><div class="outfit-tag">${o[3]}</div></div>`).join("");
-  document.getElementById("dayButtons").innerHTML = siteContent.days.map((_,i)=>`<button class="dp ${i===0?'on':''}" onclick="sd(${i+1})">Ngày ${i+1}</button>`).join("");
+  document.getElementById("dayButtons").innerHTML = siteContent.days.map((_,i)=>`<button class="dp ${i===0?'on':''}" onclick="sd(${i+1})">${t.day} ${i+1}</button>`).join("");
   document.getElementById("dayPanels").innerHTML = siteContent.days.map((d,i)=>`
     <div class="dnl ${i===0?'on':''}" id="d${i+1}">
       <div class="sbox"><div class="slides">${d.slides.map((s,j)=>`<div class="slide ${j===0?'active':''} ${s[4]||''}" style="--slide-bg:url('${s[3]}')"><img src="${s[3]}" alt="${s[1]}"><div class="s-ov"></div><div class="s-ct"><div class="s-ic">${s[0]}</div><div class="s-nm">${s[1]}</div><div class="s-ds">${s[2]}</div></div></div>`).join("")}</div><div class="dots"></div></div>
@@ -218,12 +292,13 @@ function renderContent(){
 
 function updateCountdown(){
   const left = new Date(siteContent.countdownAt) - new Date();
-  if(left<=0){document.getElementById("cd").innerHTML='<div style="font-weight:700">Đã khởi hành!</div>';return}
+  if(left<=0){document.getElementById("cd").innerHTML=`<div style="font-weight:700">${staticText[currentLanguage].departed}</div>`;return}
   const d=Math.floor(left/864e5),h=Math.floor(left%864e5/36e5),m=Math.floor(left%36e5/6e4),s=Math.floor(left%6e4/1e3);
   [["cd-d",d],["cd-h",h],["cd-m",m],["cd-s",s]].forEach(([id,val])=>document.getElementById(id).textContent=String(val).padStart(2,"0"));
 }
 function sd(n){document.querySelectorAll(".dnl").forEach(p=>p.classList.remove("on"));document.querySelectorAll(".dp").forEach(p=>p.classList.remove("on"));document.getElementById("d"+n).classList.add("on");document.querySelectorAll(".dp")[n-1].classList.add("on")}
-function initSlides(){document.querySelectorAll(".sbox").forEach(box=>{const slides=box.querySelectorAll(".slide"),dotsC=box.querySelector(".dots");dotsC.innerHTML="";slides.forEach((_,i)=>{const d=document.createElement("div");d.className="dot2"+(i===0?" on":"");d.onclick=()=>goSlide(box,i);dotsC.appendChild(d)});setInterval(()=>{const cur=[...slides].findIndex(s=>s.classList.contains("active"));goSlide(box,(cur+1)%slides.length)},3500)})}
+let slideTimers=[];
+function initSlides(){slideTimers.forEach(clearInterval);slideTimers=[];document.querySelectorAll(".sbox").forEach(box=>{const slides=box.querySelectorAll(".slide"),dotsC=box.querySelector(".dots");dotsC.innerHTML="";slides.forEach((_,i)=>{const d=document.createElement("div");d.className="dot2"+(i===0?" on":"");d.onclick=()=>goSlide(box,i);dotsC.appendChild(d)});slideTimers.push(setInterval(()=>{const cur=[...slides].findIndex(s=>s.classList.contains("active"));goSlide(box,(cur+1)%slides.length)},3500))})}
 function goSlide(box,idx){box.querySelectorAll(".slide").forEach((s,i)=>s.classList.toggle("active",i===idx));box.querySelectorAll(".dot2").forEach((d,i)=>d.classList.toggle("on",i===idx))}
 function initMotion(){
   const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("vis");ob.unobserve(e.target)}})},{threshold:.08,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=Math.min((i%8)*60,350)+"ms";ob.observe(el)});
@@ -237,14 +312,26 @@ function initEffects(){
 }
 function initSplashMusic(){
   const audio=document.getElementById("bgMusic"),btn=document.getElementById("musicBtn"),splash=document.getElementById("splash"),splashBtn=document.getElementById("splashBtn"),tip=btn.querySelector(".music-tooltip");audio.volume=.42;
-  const setPlaying=on=>{btn.classList.toggle("playing",on);tip.textContent=on?"🔇 Tắt nhạc nền":"🎵 Bật nhạc nền"};
+  const setPlaying=on=>{btn.classList.toggle("playing",on);tip.textContent=on?staticText[currentLanguage].musicOff:staticText[currentLanguage].musicOn};
   const startMusic=()=>{audio.play().then(()=>setPlaying(true)).catch(()=>setPlaying(false))};
   const stopMusic=()=>{audio.pause();setPlaying(false)};
   const enter=()=>{startMusic();splash.classList.add("hide");setTimeout(()=>splash.style.display="none",700)};
   splash.addEventListener("click",enter);splashBtn.addEventListener("click",e=>{e.stopPropagation();enter()});
   btn.addEventListener("click",()=>{audio.paused?startMusic():stopMusic()});
 }
-renderContent();updateCountdown();setInterval(updateCountdown,1000);initSlides();initMotion();initEffects();initSplashMusic();
+function initLanguagePicker(){
+  document.querySelectorAll(".lang-btn").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();const picker=button.closest(".lang-picker");document.querySelectorAll(".lang-picker").forEach(item=>item!==picker&&item.classList.remove("open"));picker.classList.toggle("open")}));
+  document.querySelectorAll("[data-lang-choice]").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();setLanguage(button.dataset.langChoice)}));
+  document.addEventListener("click",()=>document.querySelectorAll(".lang-picker").forEach(item=>item.classList.remove("open")));
+}
+function setLanguage(language){
+  if(!["vi","en"].includes(language))return;
+  currentLanguage=language;siteContent=language==="en"?siteContentEn:siteContentVi;localStorage.setItem("amata-language",language);
+  const url=new URL(location.href);url.searchParams.set("lang",language);history.replaceState({},"",url);
+  document.querySelectorAll(".lang-picker").forEach(item=>item.classList.remove("open"));renderContent();document.querySelectorAll(".fc").forEach(card=>card.classList.add("fc-in"));updateCountdown();initSlides();
+  const tip=document.querySelector(".music-tooltip");tip.textContent=document.getElementById("musicBtn").classList.contains("playing")?staticText[language].musicOff:staticText[language].musicOn;
+}
+initLanguagePicker();renderContent();updateCountdown();setInterval(updateCountdown,1000);initSlides();initMotion();initEffects();initSplashMusic();
 </script>
 </body>
 </html>

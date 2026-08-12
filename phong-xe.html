@@ -10,7 +10,7 @@
 :root{--navy:#003b73;--blue:#005596;--sky:#e8f4fd;--ice:#f7fbff;--white:#fff;--ink:#172334;--muted:#617085;--line:#d9e4ee;--gold:#f2a100;--green:#14804a;--red:#b42318;--shadow:0 18px 50px rgba(0,59,115,.12)}
 html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input{font:inherit}
 .loader{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:linear-gradient(135deg,#061b3a,#003b73 62%,#005596);color:#fff;transition:opacity .4s,visibility .4s}.loader.hide{opacity:0;visibility:hidden;pointer-events:none}.loader-in{text-align:center;padding:24px}.loader-icon{font-size:3.2rem;animation:loadMove 1.1s ease-in-out infinite}.loader-name{margin-top:12px;font-weight:800;font-size:1rem}.loader-note{margin-top:4px;font-size:.72rem;opacity:.7}.loader-bar{width:210px;height:4px;margin:18px auto 0;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}.loader-bar:before{content:'';display:block;width:45%;height:100%;border-radius:inherit;background:#fff;animation:loadBar 1.1s ease-in-out infinite}@keyframes loadMove{50%{transform:translateY(-7px)}}@keyframes loadBar{from{transform:translateX(-110%)}to{transform:translateX(250%)}}
-.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.top-in{width:min(1080px,calc(100% - 32px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;color:var(--navy);letter-spacing:1px}.back{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;color:var(--navy);font-size:.76rem;font-weight:700;background:#fff;transition:.2s}.back:hover{border-color:var(--blue);transform:translateY(-1px)}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.top-in{width:min(1080px,calc(100% - 32px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.top-actions{display:flex;align-items:center;gap:8px}.brand{font-weight:800;color:var(--navy);letter-spacing:1px}.back{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;color:var(--navy);font-size:.76rem;font-weight:700;background:#fff;transition:.2s}.back:hover{border-color:var(--blue);transform:translateY(-1px)}.lang-picker{position:relative}.lang-btn{height:36px;min-width:58px;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font-size:.7rem;font-weight:800;cursor:pointer}.lang-menu{position:absolute;top:calc(100% + 7px);right:0;display:none;width:154px;padding:5px;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:0 14px 36px rgba(0,34,68,.18)}.lang-picker.open .lang-menu{display:grid}.lang-option{padding:9px 10px;border:0;border-radius:6px;background:transparent;color:var(--ink);font-size:.72rem;font-weight:700;text-align:left;cursor:pointer}.lang-option:hover,.lang-option.active{background:var(--sky);color:var(--navy)}
 .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#061b3a,#003b73 66%,#005596);color:#fff}.hero:after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1px,transparent 1px);background-size:28px 28px;opacity:.3}.hero-in{position:relative;z-index:1;width:min(1080px,calc(100% - 32px));margin:auto;padding:62px 0 126px}.eyebrow{font:500 .66rem 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;opacity:.72}.hero h1{font-size:clamp(2rem,5vw,4rem);line-height:1.06;margin-top:12px;letter-spacing:0}.hero p{max-width:610px;margin-top:14px;font-size:.92rem;opacity:.82}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.meta span{padding:7px 11px;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.1);font-size:.7rem;font-weight:700}
 .main{width:min(1080px,calc(100% - 32px));margin:-76px auto 0;position:relative;z-index:2;padding-bottom:64px}.search-card{background:#fff;border:1px solid rgba(217,228,238,.9);border-radius:16px;padding:26px;box-shadow:var(--shadow)}.search-title{font-size:1.08rem;font-weight:800}.search-note{margin-top:4px;color:var(--muted);font-size:.76rem}.form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:20px}.field{position:relative}.field input{width:100%;height:52px;border:1px solid var(--line);border-radius:10px;padding:0 16px;background:var(--ice);color:var(--ink);font-size:1rem;font-weight:700;letter-spacing:.6px;outline:none;transition:.2s}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,85,150,.1);background:#fff}.search-btn{height:52px;padding:0 24px;border:0;border-radius:10px;background:var(--navy);color:#fff;font-size:.8rem;font-weight:800;cursor:pointer;transition:.2s}.search-btn:hover{background:var(--blue)}.search-btn:active{transform:scale(.98)}.search-btn:disabled{opacity:.65;cursor:wait}.privacy{display:flex;align-items:flex-start;gap:8px;margin-top:12px;color:var(--muted);font-size:.66rem}.privacy strong{color:var(--ink)}
 .message{display:none;margin-top:18px;padding:13px 15px;border-radius:10px;font-size:.75rem;font-weight:600}.message.on{display:block}.message.error{background:#fff0ef;color:var(--red);border:1px solid #ffd1cd}.message.info{background:var(--sky);color:var(--navy);border:1px solid #cce6f7}
@@ -21,21 +21,21 @@ html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:v
 </style>
 </head>
 <body>
-<div class="loader" id="loader" aria-live="polite"><div class="loader-in"><div class="loader-icon">🔎</div><div class="loader-name">Đang mở trang tra cứu chuyến đi</div><div class="loader-note">Team Building 2026</div><div class="loader-bar"></div></div></div>
+<div class="loader" id="loader" aria-live="polite"><div class="loader-in"><div class="loader-icon">🔎</div><div class="loader-name" id="loaderName">Đang mở trang tra cứu chuyến đi</div><div class="loader-note">Team Building 2026</div><div class="loader-bar"></div></div></div>
 
-<header class="top"><div class="top-in"><div class="brand">NHÀ MÁY AMATA</div><a class="back" href="index.html">← Quay lại Sổ tay</a></div></header>
+<header class="top"><div class="top-in"><div class="brand" id="pageBrand">NHÀ MÁY AMATA</div><div class="top-actions"><a class="back" id="backLink" href="index.html">← Quay lại Sổ tay</a><div class="lang-picker"><button class="lang-btn" id="langButton" type="button" aria-label="Chọn ngôn ngữ">🌐 <span id="langCode">VI</span></button><div class="lang-menu"><button class="lang-option" type="button" data-lang-choice="vi">VI · Tiếng Việt</button><button class="lang-option" type="button" data-lang-choice="en">EN · English</button></div></div></div></div></header>
 
-<section class="hero"><div class="hero-in"><div class="eyebrow">Thông tin cá nhân</div><h1>Tra cứu chuyến đi</h1><p>Nhập mã số nhân viên để xem thông tin xe, điểm đón và những người cùng phòng.</p><div class="meta"><span>21 - 22/08/2026</span><span>Vũng Tàu</span></div></div></section>
+<section class="hero"><div class="hero-in"><div class="eyebrow" id="heroEyebrow">Thông tin cá nhân</div><h1 id="heroTitle">Tra cứu chuyến đi</h1><p id="heroDescription">Nhập mã số nhân viên để xem thông tin xe, điểm đón và những người cùng phòng.</p><div class="meta"><span>21 - 22/08/2026</span><span id="heroLocation">Vũng Tàu</span></div></div></section>
 
 <main class="main">
   <section class="search-card" aria-labelledby="lookupTitle">
     <h2 class="search-title" id="lookupTitle">Nhập mã số nhân viên</h2>
-    <p class="search-note">Nhập đúng mã số trong danh sách đăng ký Team Building. Contractor nhập theo cú pháp <strong>contractor + họ</strong>, ví dụ: <strong>contractorhuynh</strong>.</p>
+    <p class="search-note" id="searchNote">Nhập đúng mã số trong danh sách đăng ký Team Building. Contractor nhập theo cú pháp <strong>contractor + họ</strong>, ví dụ: <strong>contractorhuynh</strong>.</p>
     <form class="form" id="lookupForm">
       <label class="field"><span style="position:absolute;width:1px;height:1px;overflow:hidden">Mã số nhân viên</span><input id="employeeId" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="20" placeholder="Nhập mã số nhân viên" required></label>
       <button class="search-btn" id="searchButton" type="submit">🔎 Tra cứu</button>
     </form>
-    <div class="privacy"><span>🔒</span><span><strong>Thông tin nội bộ.</strong> Chỉ tra cứu mã số của chính bạn và không chia sẻ kết quả ra bên ngoài.</span></div>
+    <div class="privacy"><span>🔒</span><span id="privacyText"><strong>Thông tin nội bộ.</strong> Chỉ tra cứu mã số của chính bạn và không chia sẻ kết quả ra bên ngoài.</span></div>
     <div class="message" id="message" role="status" aria-live="polite"></div>
   </section>
 
@@ -49,12 +49,19 @@ html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:v
   </section>
 </main>
 
-<footer class="footer">NHÀ MÁY AMATA</footer>
+<footer class="footer" id="pageFooter">NHÀ MÁY AMATA</footer>
 
 <script src="lookup-data.js"></script>
 <script>
 const encoder=new TextEncoder();
 const decoder=new TextDecoder();
+const queryLanguage=new URLSearchParams(location.search).get("lang");
+let currentLanguage=["vi","en"].includes(queryLanguage)?queryLanguage:(localStorage.getItem("amata-language")||"vi");
+if(!["vi","en"].includes(currentLanguage))currentLanguage="vi";
+const pageText={
+  vi:{title:"Tra cứu chuyến đi | Team Building 2026",brand:"NHÀ MÁY AMATA",back:"← Quay lại Sổ tay",loader:"Đang mở trang tra cứu chuyến đi",eyebrow:"Thông tin cá nhân",heroTitle:"Tra cứu chuyến đi",heroDescription:"Nhập mã số nhân viên để xem thông tin xe, điểm đón và những người cùng phòng.",location:"Vũng Tàu",lookupTitle:"Nhập mã số nhân viên",searchNote:'Nhập đúng mã số trong danh sách đăng ký Team Building. Contractor nhập theo cú pháp <strong>contractor + họ</strong>, ví dụ: <strong>contractorhuynh</strong>.',placeholder:"Nhập mã số nhân viên",search:"🔎 Tra cứu",searching:"Đang tra cứu...",privacy:"<strong>Thông tin nội bộ.</strong> Chỉ tra cứu mã số của chính bạn và không chia sẻ kết quả ra bên ngoài.",personLabel:"Thông tin của bạn",transportTitle:"Thông tin xe",transportSubtitle:"Di chuyển và điểm đón",roommateTitle:"Đồng đội cùng phòng",help:"<strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.",selfTitle:"Tự di chuyển",selfText:"Bạn được ghi nhận đi riêng, vì vậy không có số xe và điểm đón.",coach:"Số xe",coachValue:"Xe",pickup:"Điểm đón",meeting:"Giờ có mặt",leader:"Trưởng xe",phone:"Điện thoại",roomEmpty:"Hiện chưa có thông tin đồng đội cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận.",required:"Vui lòng nhập mã số nhân viên.",notFound:"Không tìm thấy mã số này trong danh sách Team Building. Vui lòng kiểm tra lại hoặc liên hệ BTC.",conflict:"Mã nhân viên này đang có nhiều thông tin phân bổ. Vui lòng liên hệ BTC để xác nhận.",readError:"Chưa thể đọc dữ liệu. Vui lòng tải lại trang và thử lại.",languageLabel:"Chọn ngôn ngữ"},
+  en:{title:"Trip Lookup | Team Building 2026",brand:"AMATA PLANT",back:"← Back to Handbook",loader:"Opening the trip lookup",eyebrow:"Personal information",heroTitle:"Trip lookup",heroDescription:"Enter your employee ID to view your coach, pickup point and roommates.",location:"Vung Tau",lookupTitle:"Enter your employee ID",searchNote:'Enter the ID used for Team Building registration. Contractors should enter <strong>contractor + surname</strong>, for example: <strong>contractorhuynh</strong>.',placeholder:"Enter employee ID",search:"🔎 Search",searching:"Searching...",privacy:"<strong>Internal information.</strong> Only look up your own employee ID and do not share the result externally.",personLabel:"Your information",transportTitle:"Coach information",transportSubtitle:"Transport and pickup point",roommateTitle:"Roommates",help:"<strong>Need help?</strong> If any information is incorrect, please contact the Organizing Committee or your coach leader.",selfTitle:"Self-arranged transport",selfText:"You are registered to travel independently, so no coach or pickup point is assigned.",coach:"Coach",coachValue:"Coach",pickup:"Pickup point",meeting:"Meeting time",leader:"Coach leader",phone:"Phone",roomEmpty:"Roommate information is not available yet. Please contact the Organizing Committee for confirmation.",required:"Please enter your employee ID.",notFound:"This employee ID was not found in the Team Building list. Please check it or contact the Organizing Committee.",conflict:"This employee ID has conflicting assignments. Please contact the Organizing Committee for confirmation.",readError:"The data could not be loaded. Please refresh the page and try again.",languageLabel:"Choose language"}
+};
 
 function normalizeId(value){
   const id=String(value||"").trim().replace(/\s+/g,"").toUpperCase();
@@ -93,41 +100,53 @@ function showMessage(text,type="error"){
 
 function hideMessage(){document.getElementById("message").className="message"}
 
+function applyLanguage(language){
+  currentLanguage=language;localStorage.setItem("amata-language",language);const t=pageText[language];document.documentElement.lang=language;document.title=t.title;
+  [["loaderName",t.loader],["pageBrand",t.brand],["backLink",t.back],["heroEyebrow",t.eyebrow],["heroTitle",t.heroTitle],["heroDescription",t.heroDescription],["heroLocation",t.location],["lookupTitle",t.lookupTitle],["searchButton",t.search],["personLabel",t.personLabel],["transportTitle",t.transportTitle],["transportSubtitle",t.transportSubtitle],["roommateTitle",t.roommateTitle],["pageFooter",t.brand]].forEach(([id,value])=>document.getElementById(id).textContent=value);
+  document.getElementById("searchNote").innerHTML=t.searchNote;document.getElementById("privacyText").innerHTML=t.privacy;document.getElementById("resultHelp").innerHTML=t.help;document.getElementById("employeeId").placeholder=t.placeholder;document.getElementById("langCode").textContent=language.toUpperCase();document.getElementById("langButton").setAttribute("aria-label",t.languageLabel);document.querySelectorAll(".lang-option").forEach(option=>option.classList.toggle("active",option.dataset.langChoice===language));
+  const backUrl=new URL("index.html",location.href);backUrl.searchParams.set("lang",language);document.getElementById("backLink").href=backUrl.href;
+  const url=new URL(location.href);url.searchParams.set("lang",language);history.replaceState({},"",url);
+}
+
 function renderResult(data){
-  const isEnglish=data.language==="en";
+  const isEnglish=currentLanguage==="en";
+  const t=pageText[currentLanguage];
   document.getElementById("personName").textContent=data.name;
   document.getElementById("personAvatar").textContent=data.gender==="Nữ"?"👩":data.gender==="Nam"?"👨":"👤";
-  document.getElementById("personLabel").textContent=isEnglish?"Your information":"Thông tin của bạn";
-  document.getElementById("transportTitle").textContent=isEnglish?"Coach information":"Thông tin xe";
-  document.getElementById("transportSubtitle").textContent=isEnglish?"Transport and pickup point":"Di chuyển và điểm đón";
-  document.getElementById("roommateTitle").textContent=isEnglish?"Roommates":"Đồng đội cùng phòng";
-  document.getElementById("resultHelp").innerHTML=isEnglish?"<strong>Need help?</strong> If any information is incorrect, please contact the Organizing Committee or your coach leader.":"<strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.";
+  document.getElementById("personLabel").textContent=t.personLabel;document.getElementById("transportTitle").textContent=t.transportTitle;document.getElementById("transportSubtitle").textContent=t.transportSubtitle;document.getElementById("roommateTitle").textContent=t.roommateTitle;document.getElementById("resultHelp").innerHTML=t.help;
   const transport=document.getElementById("transportDetails");
   if(data.transport.selfTravel){
-    transport.innerHTML=isEnglish?'<div class="self-travel"><div class="self-title">Self-arranged transport</div><div class="self-text">You are registered to travel independently, so no coach or pickup point is assigned.</div></div>':'<div class="self-travel"><div class="self-title">Tự di chuyển</div><div class="self-text">Bạn được ghi nhận đi riêng, vì vậy không có số xe và điểm đón.</div></div>';
+    transport.innerHTML=`<div class="self-travel"><div class="self-title">${t.selfTitle}</div><div class="self-text">${t.selfText}</div></div>`;
   }else{
     const phone=data.transport.phone;
-    const pickup=isEnglish&&data.transport.pickupLocation==="Nhà máy Amata"?"Amata Plant":data.transport.pickupLocation;
-    transport.innerHTML=`<div class="details"><div class="row"><div class="row-label">${isEnglish?"Coach":"Số xe"}</div><div class="row-value">${isEnglish?"Coach":"Xe"} ${escapeHtml(data.transport.bus)}</div></div><div class="row"><div class="row-label">${isEnglish?"Pickup point":"Điểm đón"}</div><div class="row-value">${escapeHtml(pickup)}</div></div><div class="row"><div class="row-label">${isEnglish?"Meeting time":"Giờ có mặt"}</div><div class="row-value">${escapeHtml(data.transport.pickupTime)}</div></div><div class="row"><div class="row-label">${isEnglish?"Coach leader":"Trưởng xe"}</div><div class="row-value">${escapeHtml(data.transport.leader)}</div></div>${phone?`<div class="row"><div class="row-label">${isEnglish?"Phone":"Điện thoại"}</div><div class="row-value"><a href="tel:${phone.replace(/\s/g,"")}">${escapeHtml(phone)}</a></div></div>`:""}</div>`;
+    const pickupTranslations={"Nhà máy Amata":"Amata Plant","Ngã tư Thủ Đức":"Thu Duc Intersection","Bến xe buýt Văn Thánh":"Van Thanh Bus Station"};
+    const pickup=isEnglish?(pickupTranslations[data.transport.pickupLocation]||data.transport.pickupLocation):data.transport.pickupLocation;
+    transport.innerHTML=`<div class="details"><div class="row"><div class="row-label">${t.coach}</div><div class="row-value">${t.coachValue} ${escapeHtml(data.transport.bus)}</div></div><div class="row"><div class="row-label">${t.pickup}</div><div class="row-value">${escapeHtml(pickup)}</div></div><div class="row"><div class="row-label">${t.meeting}</div><div class="row-value">${escapeHtml(data.transport.pickupTime)}</div></div><div class="row"><div class="row-label">${t.leader}</div><div class="row-value">${escapeHtml(data.transport.leader)}</div></div>${phone?`<div class="row"><div class="row-label">${t.phone}</div><div class="row-value"><a href="tel:${phone.replace(/\s/g,"")}">${escapeHtml(phone)}</a></div></div>`:""}</div>`;
   }
-  document.getElementById("roommateDetails").innerHTML=data.roomStatus?`<div class="self-travel"><div class="empty-icon">⛰️</div><div class="self-title">${escapeHtml(data.roomStatus)}</div></div>`:data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:`<div class="empty">${isEnglish?"Roommate information is not available yet. Please contact the Organizing Committee for confirmation.":"Hiện chưa có thông tin đồng đội cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận."}</div>`;
+  const roomStatus=isEnglish&&data.roomStatus?"Staying at Nui Dinh =)))":data.roomStatus;
+  document.getElementById("roommateDetails").innerHTML=roomStatus?`<div class="self-travel"><div class="empty-icon">⛰️</div><div class="self-title">${escapeHtml(roomStatus)}</div></div>`:data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:`<div class="empty">${t.roomEmpty}</div>`;
   const result=document.getElementById("result");result.classList.add("on");result.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 document.getElementById("lookupForm").addEventListener("submit",async event=>{
   event.preventDefault();hideMessage();document.getElementById("result").classList.remove("on");
   const id=normalizeId(document.getElementById("employeeId").value);
-  if(!id){showMessage("Vui lòng nhập mã số nhân viên.");return}
-  const button=document.getElementById("searchButton");button.disabled=true;button.textContent="Đang tra cứu...";
+  if(!id){showMessage(pageText[currentLanguage].required);return}
+  const button=document.getElementById("searchButton");button.disabled=true;button.textContent=pageText[currentLanguage].searching;
   try{
     const data=await findEmployee(id);
-    if(!data){showMessage("Không tìm thấy mã số này trong danh sách Team Building. Vui lòng kiểm tra lại hoặc liên hệ BTC.");return}
-    if(data.status==="conflict"){showMessage(data.message);return}
+    if(!data){showMessage(pageText[currentLanguage].notFound);return}
+    if(data.status==="conflict"){showMessage(pageText[currentLanguage].conflict);return}
     renderResult(data);
-  }catch(error){showMessage("Chưa thể đọc dữ liệu. Vui lòng tải lại trang và thử lại.")}
-  finally{button.disabled=false;button.textContent="🔎 Tra cứu"}
+  }catch(error){showMessage(pageText[currentLanguage].readError)}
+  finally{button.disabled=false;button.textContent=pageText[currentLanguage].search}
 });
 
+document.getElementById("langButton").addEventListener("click",event=>{event.stopPropagation();document.querySelector(".lang-picker").classList.toggle("open")});
+document.querySelectorAll("[data-lang-choice]").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();document.querySelector(".lang-picker").classList.remove("open");applyLanguage(button.dataset.langChoice);if(document.getElementById("result").classList.contains("on"))document.getElementById("lookupForm").requestSubmit()}));
+document.addEventListener("click",()=>document.querySelector(".lang-picker").classList.remove("open"));
+
+applyLanguage(currentLanguage);
 window.addEventListener("load",()=>setTimeout(()=>document.getElementById("loader").classList.add("hide"),500),{once:true});
 </script>
 </body>
