@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:v
     <h2 class="search-title" id="lookupTitle">Nhập mã số nhân viên</h2>
     <p class="search-note">Nhập đúng mã số trong danh sách đăng ký Team Building. Contractor nhập theo cú pháp <strong>contractor + họ</strong>, ví dụ: <strong>contractorhuynh</strong>.</p>
     <form class="form" id="lookupForm">
-      <label class="field"><span style="position:absolute;width:1px;height:1px;overflow:hidden">Mã số nhân viên</span><input id="employeeId" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="20" placeholder="Ví dụ: 61017231" required></label>
+      <label class="field"><span style="position:absolute;width:1px;height:1px;overflow:hidden">Mã số nhân viên</span><input id="employeeId" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="20" placeholder="Nhập mã số nhân viên" required></label>
       <button class="search-btn" id="searchButton" type="submit">🔎 Tra cứu</button>
     </form>
     <div class="privacy"><span>🔒</span><span><strong>Thông tin nội bộ.</strong> Chỉ tra cứu mã số của chính bạn và không chia sẻ kết quả ra bên ngoài.</span></div>
@@ -40,10 +40,10 @@ html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:v
   </section>
 
   <section class="result" id="result" aria-live="polite">
-    <div class="person"><div class="avatar">👤</div><div><div class="person-label">Thông tin của bạn</div><div class="person-name" id="personName"></div></div></div>
+    <div class="person"><div class="avatar" id="personAvatar" aria-hidden="true">👤</div><div><div class="person-label">Thông tin của bạn</div><div class="person-name" id="personName"></div></div></div>
     <div class="result-grid">
       <article class="result-card"><div class="card-head"><div class="card-icon">🚌</div><div><div class="card-title">Thông tin xe</div><div class="card-sub">Di chuyển và điểm đón</div></div></div><div id="transportDetails"></div></article>
-      <article class="result-card"><div class="card-head"><div class="card-icon">🏨</div><div><div class="card-title">Người cùng phòng</div></div></div><div id="roommateDetails"></div></article>
+      <article class="result-card"><div class="card-head"><div class="card-icon">🏨</div><div><div class="card-title">Đồng đội cùng phòng</div></div></div><div id="roommateDetails"></div></article>
     </div>
     <div class="help"><strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.</div>
   </section>
@@ -95,6 +95,7 @@ function hideMessage(){document.getElementById("message").className="message"}
 
 function renderResult(data){
   document.getElementById("personName").textContent=data.name;
+  document.getElementById("personAvatar").textContent=data.gender==="Nữ"?"👩":data.gender==="Nam"?"👨":"👤";
   const transport=document.getElementById("transportDetails");
   if(data.transport.selfTravel){
     transport.innerHTML='<div class="self-travel"><div class="self-title">Tự di chuyển</div><div class="self-text">Bạn được ghi nhận đi riêng, vì vậy không có số xe và điểm đón.</div></div>';
@@ -102,7 +103,7 @@ function renderResult(data){
     const phone=data.transport.phone;
     transport.innerHTML=`<div class="details"><div class="row"><div class="row-label">Số xe</div><div class="row-value">Xe ${escapeHtml(data.transport.bus)}</div></div><div class="row"><div class="row-label">Điểm đón</div><div class="row-value">${escapeHtml(data.transport.pickupLocation)}</div></div><div class="row"><div class="row-label">Giờ có mặt</div><div class="row-value">${escapeHtml(data.transport.pickupTime)}</div></div><div class="row"><div class="row-label">Trưởng xe</div><div class="row-value">${escapeHtml(data.transport.leader)}</div></div>${phone?`<div class="row"><div class="row-label">Điện thoại</div><div class="row-value"><a href="tel:${phone.replace(/\s/g,"")}">${escapeHtml(phone)}</a></div></div>`:""}</div>`;
   }
-  document.getElementById("roommateDetails").innerHTML=data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:'<div class="empty">Hiện chưa có thông tin người cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận.</div>';
+  document.getElementById("roommateDetails").innerHTML=data.roomStatus?`<div class="self-travel"><div class="empty-icon">⛰️</div><div class="self-title">${escapeHtml(data.roomStatus)}</div></div>`:data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:'<div class="empty">Hiện chưa có thông tin đồng đội cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận.</div>';
   const result=document.getElementById("result");result.classList.add("on");result.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
