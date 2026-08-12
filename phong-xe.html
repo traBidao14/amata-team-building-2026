@@ -40,12 +40,12 @@ html{scroll-behavior:smooth}body{min-height:100dvh;background:var(--ice);color:v
   </section>
 
   <section class="result" id="result" aria-live="polite">
-    <div class="person"><div class="avatar" id="personAvatar" aria-hidden="true">👤</div><div><div class="person-label">Thông tin của bạn</div><div class="person-name" id="personName"></div></div></div>
+    <div class="person"><div class="avatar" id="personAvatar" aria-hidden="true">👤</div><div><div class="person-label" id="personLabel">Thông tin của bạn</div><div class="person-name" id="personName"></div></div></div>
     <div class="result-grid">
-      <article class="result-card"><div class="card-head"><div class="card-icon">🚌</div><div><div class="card-title">Thông tin xe</div><div class="card-sub">Di chuyển và điểm đón</div></div></div><div id="transportDetails"></div></article>
-      <article class="result-card"><div class="card-head"><div class="card-icon">🏨</div><div><div class="card-title">Đồng đội cùng phòng</div></div></div><div id="roommateDetails"></div></article>
+      <article class="result-card"><div class="card-head"><div class="card-icon">🚌</div><div><div class="card-title" id="transportTitle">Thông tin xe</div><div class="card-sub" id="transportSubtitle">Di chuyển và điểm đón</div></div></div><div id="transportDetails"></div></article>
+      <article class="result-card"><div class="card-head"><div class="card-icon">🏨</div><div><div class="card-title" id="roommateTitle">Đồng đội cùng phòng</div></div></div><div id="roommateDetails"></div></article>
     </div>
-    <div class="help"><strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.</div>
+    <div class="help" id="resultHelp"><strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.</div>
   </section>
 </main>
 
@@ -94,16 +94,23 @@ function showMessage(text,type="error"){
 function hideMessage(){document.getElementById("message").className="message"}
 
 function renderResult(data){
+  const isEnglish=data.language==="en";
   document.getElementById("personName").textContent=data.name;
   document.getElementById("personAvatar").textContent=data.gender==="Nữ"?"👩":data.gender==="Nam"?"👨":"👤";
+  document.getElementById("personLabel").textContent=isEnglish?"Your information":"Thông tin của bạn";
+  document.getElementById("transportTitle").textContent=isEnglish?"Coach information":"Thông tin xe";
+  document.getElementById("transportSubtitle").textContent=isEnglish?"Transport and pickup point":"Di chuyển và điểm đón";
+  document.getElementById("roommateTitle").textContent=isEnglish?"Roommates":"Đồng đội cùng phòng";
+  document.getElementById("resultHelp").innerHTML=isEnglish?"<strong>Need help?</strong> If any information is incorrect, please contact the Organizing Committee or your coach leader.":"<strong>Cần hỗ trợ?</strong> Nếu thông tin chưa chính xác, vui lòng liên hệ BTC hoặc trưởng xe của bạn.";
   const transport=document.getElementById("transportDetails");
   if(data.transport.selfTravel){
-    transport.innerHTML='<div class="self-travel"><div class="self-title">Tự di chuyển</div><div class="self-text">Bạn được ghi nhận đi riêng, vì vậy không có số xe và điểm đón.</div></div>';
+    transport.innerHTML=isEnglish?'<div class="self-travel"><div class="self-title">Self-arranged transport</div><div class="self-text">You are registered to travel independently, so no coach or pickup point is assigned.</div></div>':'<div class="self-travel"><div class="self-title">Tự di chuyển</div><div class="self-text">Bạn được ghi nhận đi riêng, vì vậy không có số xe và điểm đón.</div></div>';
   }else{
     const phone=data.transport.phone;
-    transport.innerHTML=`<div class="details"><div class="row"><div class="row-label">Số xe</div><div class="row-value">Xe ${escapeHtml(data.transport.bus)}</div></div><div class="row"><div class="row-label">Điểm đón</div><div class="row-value">${escapeHtml(data.transport.pickupLocation)}</div></div><div class="row"><div class="row-label">Giờ có mặt</div><div class="row-value">${escapeHtml(data.transport.pickupTime)}</div></div><div class="row"><div class="row-label">Trưởng xe</div><div class="row-value">${escapeHtml(data.transport.leader)}</div></div>${phone?`<div class="row"><div class="row-label">Điện thoại</div><div class="row-value"><a href="tel:${phone.replace(/\s/g,"")}">${escapeHtml(phone)}</a></div></div>`:""}</div>`;
+    const pickup=isEnglish&&data.transport.pickupLocation==="Nhà máy Amata"?"Amata Plant":data.transport.pickupLocation;
+    transport.innerHTML=`<div class="details"><div class="row"><div class="row-label">${isEnglish?"Coach":"Số xe"}</div><div class="row-value">${isEnglish?"Coach":"Xe"} ${escapeHtml(data.transport.bus)}</div></div><div class="row"><div class="row-label">${isEnglish?"Pickup point":"Điểm đón"}</div><div class="row-value">${escapeHtml(pickup)}</div></div><div class="row"><div class="row-label">${isEnglish?"Meeting time":"Giờ có mặt"}</div><div class="row-value">${escapeHtml(data.transport.pickupTime)}</div></div><div class="row"><div class="row-label">${isEnglish?"Coach leader":"Trưởng xe"}</div><div class="row-value">${escapeHtml(data.transport.leader)}</div></div>${phone?`<div class="row"><div class="row-label">${isEnglish?"Phone":"Điện thoại"}</div><div class="row-value"><a href="tel:${phone.replace(/\s/g,"")}">${escapeHtml(phone)}</a></div></div>`:""}</div>`;
   }
-  document.getElementById("roommateDetails").innerHTML=data.roomStatus?`<div class="self-travel"><div class="empty-icon">⛰️</div><div class="self-title">${escapeHtml(data.roomStatus)}</div></div>`:data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:'<div class="empty">Hiện chưa có thông tin đồng đội cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận.</div>';
+  document.getElementById("roommateDetails").innerHTML=data.roomStatus?`<div class="self-travel"><div class="empty-icon">⛰️</div><div class="self-title">${escapeHtml(data.roomStatus)}</div></div>`:data.roommates.length?`<div class="roommates">${data.roommates.map(name=>`<div class="mate">${escapeHtml(name)}</div>`).join("")}</div>`:`<div class="empty">${isEnglish?"Roommate information is not available yet. Please contact the Organizing Committee for confirmation.":"Hiện chưa có thông tin đồng đội cùng phòng. Vui lòng liên hệ BTC nếu cần xác nhận."}</div>`;
   const result=document.getElementById("result");result.classList.add("on");result.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
